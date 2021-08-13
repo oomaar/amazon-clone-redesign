@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const hueColor = '39';
+export const headerHeight = '3rem';
 
 // View Ports
 export const smScreen = 280;
