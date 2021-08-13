@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled, { ThemeProvider } from 'styled-components';
-import { HeadTag, SearchBar, Sidebar } from "../components";
+import { Banner, HeadTag, SearchBar, Sidebar } from "../components";
 import { darkTheme, GlobalStyle, lightTheme, mdScreen, theme, xlScreen } from "../Global/GlobalStyle";
 
 export default function Home() {
@@ -16,37 +16,7 @@ export default function Home() {
           <Sidebar darkMode={darkMode} />
           <Main>
             <SearchBar darkMode={darkMode} />
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
+            <Banner />
           </Main>
         </Application>
       </ThemeProvider>
