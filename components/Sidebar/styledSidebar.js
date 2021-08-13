@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { headerHeight, lgScreen, mdScreen } from '../../Global/GlobalStyle';
+import { headerHeight, sidebarWidth, mdScreen } from '../../Global/GlobalStyle';
 
 export const Nav = styled.nav`
   background-color: ${({ theme }) => theme.colors.containerColor};
@@ -16,7 +16,7 @@ export const Nav = styled.nav`
   @media screen and (min-width: ${mdScreen}px) {
     top: 0;
     left: 0;
-    width: 70px;
+    width: ${sidebarWidth};
     height: 100vh;
     flex-direction: column;
     padding: 2rem;
