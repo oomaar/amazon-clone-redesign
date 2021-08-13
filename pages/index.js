@@ -1,3 +1,10 @@
+import { HeadTag } from "../components";
+
 export default function Home() {
-  return <>My page</>
+  return (
+    <div>
+      <HeadTag />
+      Amazon Clone
+    </div>
+  );
 };
