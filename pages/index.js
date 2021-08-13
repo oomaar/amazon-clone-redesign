@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled, { ThemeProvider } from 'styled-components';
-import { HeadTag } from "../components";
+import { HeadTag, Sidebar } from "../components";
 import { darkTheme, GlobalStyle, lightTheme, theme } from "../Global/GlobalStyle";
 
 export default function Home() {
@@ -12,7 +12,8 @@ export default function Home() {
         <GlobalStyle />
         <Application>
           <HeadTag />
-          Amazon Clone
+
+          <Sidebar />
         </Application>
       </ThemeProvider>
     </ThemeProvider>
