@@ -1,7 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
+// constants
 const hueColor = '39';
 export const headerHeight = '3rem';
+export const sidebarWidth = '4.375rem';
 
 // View Ports
 export const smScreen = 280;

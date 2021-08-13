@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled, { ThemeProvider } from 'styled-components';
-import { HeadTag, Sidebar } from "../components";
-import { darkTheme, GlobalStyle, lightTheme, theme } from "../Global/GlobalStyle";
+import { HeadTag, SearchBar, Sidebar } from "../components";
+import { darkTheme, GlobalStyle, lgScreen, lightTheme, mdScreen, sidebarWidth, theme, xlScreen } from "../Global/GlobalStyle";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState('light');
@@ -15,7 +15,7 @@ export default function Home() {
 
           <Sidebar darkMode={darkMode} />
           <Main>
-
+            <SearchBar />
           </Main>
         </Application>
       </ThemeProvider>
@@ -26,5 +26,17 @@ export default function Home() {
 const Application = styled.div``;
 
 const Main = styled.main`
-  border: 1px solid red;
+  max-width: 1024px;
+
+  @media screen and (min-width: ${mdScreen}px) {
+    margin: 0 0 0 4.5rem;
+  }
+
+  @media screen and (min-width: ${xlScreen}px) {
+    margin: 0 auto 0 4.5rem;
+  }
+
+  @media screen and (min-width: 1160px) {
+    margin: 0 auto;
+  }
 `;
