@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled, { ThemeProvider } from 'styled-components';
 import { HeadTag, SearchBar, Sidebar } from "../components";
-import { darkTheme, GlobalStyle, lgScreen, lightTheme, mdScreen, sidebarWidth, theme, xlScreen } from "../Global/GlobalStyle";
+import { darkTheme, GlobalStyle, lightTheme, mdScreen, theme, xlScreen } from "../Global/GlobalStyle";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState('light');
@@ -15,7 +15,7 @@ export default function Home() {
 
           <Sidebar darkMode={darkMode} />
           <Main>
-            <SearchBar />
+            <SearchBar darkMode={darkMode} />
           </Main>
         </Application>
       </ThemeProvider>
