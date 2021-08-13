@@ -13,7 +13,10 @@ export default function Home() {
         <Application>
           <HeadTag />
 
-          <Sidebar />
+          <Sidebar darkMode={darkMode} />
+          <Main>
+
+          </Main>
         </Application>
       </ThemeProvider>
     </ThemeProvider>
@@ -21,3 +24,7 @@ export default function Home() {
 };
 
 const Application = styled.div``;
+
+const Main = styled.main`
+  border: 1px solid red;
+`;
