@@ -47,7 +47,7 @@ export const Icons = styled.ul`
 `;
 
 export const Icon = styled.div`
-  color: #111;
+  color: ${({ theme }) => theme.colors.textColor};
   transition: 0.4s;
   cursor: pointer;
   font-size: clamp(1.5rem, 1.5vw, 1.7rem);
