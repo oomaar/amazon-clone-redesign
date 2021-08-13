@@ -12,6 +12,7 @@ export const Nav = styled.nav`
   bottom: 0;
   width: 100%;
   height: ${headerHeight};
+  z-index: 100;
 
   @media screen and (min-width: ${mdScreen}px) {
     top: 0;

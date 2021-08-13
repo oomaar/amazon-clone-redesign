@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { headerHeight, lgScreen, mdScreen, sidebarWidth } from '../../Global/GlobalStyle';
 
 export const Nav = styled.nav`
+  background-color: ${({ theme }) => theme.colors.bodyColor};
   display: flex;
   align-items: center;
   flex-direction: column-reverse;
@@ -11,6 +12,7 @@ export const Nav = styled.nav`
   top: 0;
   height: calc(${headerHeight} * 2);
   box-shadow: 1px 1px 2px rgba(229, 231, 235, 0.5);
+  z-index: 100;
 
   @media (min-width: ${mdScreen}px) {
     flex-direction: row;
