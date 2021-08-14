@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled, { ThemeProvider } from 'styled-components';
-import { Banner, HeadTag, SearchBar, Sidebar } from "../components";
+import { Banner, HeadTag, ProductFeed, SearchBar, Sidebar } from "../components";
 import { darkTheme, GlobalStyle, lightTheme, mdScreen, theme, xlScreen } from "../Global/GlobalStyle";
 
 export default function Home() {
@@ -17,6 +17,7 @@ export default function Home() {
           <Main>
             <SearchBar darkMode={darkMode} />
             <Banner />
+            <ProductFeed />
           </Main>
         </Application>
       </ThemeProvider>
@@ -41,3 +42,14 @@ const Main = styled.main`
     margin: 0 auto;
   }
 `;
+
+export async function getServerSideProps(context) {
+  const products = await fetch("https://fakestoreapi.com/products")
+    .then(res => res.json());
+
+  return {
+    props: {
+      products,
+    },
+  };
+};
