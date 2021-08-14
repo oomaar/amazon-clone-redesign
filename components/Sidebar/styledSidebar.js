@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { headerHeight, sidebarWidth, mdScreen } from '../../Global/GlobalStyle';
+import { headerHeight, sidebarWidth, mdScreen, smScreen } from '../../Global/GlobalStyle';
 
 export const Nav = styled.nav`
   background-color: ${({ theme }) => theme.colors.containerColor};
@@ -14,6 +14,10 @@ export const Nav = styled.nav`
   height: ${headerHeight};
   z-index: 100;
 
+  .user__icon {
+    display: none;
+  }
+  
   @media screen and (min-width: ${mdScreen}px) {
     top: 0;
     left: 0;
@@ -21,6 +25,10 @@ export const Nav = styled.nav`
     height: 100vh;
     flex-direction: column;
     padding: 2rem;
+
+    .user__icon {
+      display: block;
+    }
   }
 `;
 

@@ -58,7 +58,7 @@ export const Sidebar = ({ darkMode }) => {
                     </Icon>
                 </li>
             </Icons>
-            <Icon>
+            <Icon className="user__icon">
                 <HiOutlineUserCircle />
             </Icon>
         </Nav>
