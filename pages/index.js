@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { Banner, HeadTag, ProductFeed, SearchBar, Sidebar } from "../components";
 import { darkTheme, GlobalStyle, lightTheme, mdScreen, theme, xlScreen } from "../Global/GlobalStyle";
 
-export default function Home() {
+export default function Home({ products }) {
   const [darkMode, setDarkMode] = useState('light');
 
   return (
@@ -17,7 +17,7 @@ export default function Home() {
           <Main>
             <SearchBar darkMode={darkMode} />
             <Banner />
-            <ProductFeed />
+            <ProductFeed products={products} />
           </Main>
         </Application>
       </ThemeProvider>
