@@ -29,7 +29,7 @@ export const SearchBar = ({ darkMode }) => {
                 <Logo>
                     {darkMode === 'light' ? (
                         <Image
-                            onCLick={() => router.push('/')}
+                            onClick={() => router.push('/')}
                             src="/logo-black.png"
                             width={300}
                             height={100}
@@ -37,7 +37,7 @@ export const SearchBar = ({ darkMode }) => {
                         />
                     ) : (
                         <Image
-                            onCLick={() => router.push('/')}
+                            onClick={() => router.push('/')}
                             src="/logo-white.png"
                             width={300}
                             height={100}

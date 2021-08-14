@@ -20,7 +20,7 @@ export const Sidebar = ({ darkMode }) => {
             <Logo>
                 {darkMode === 'light' ? (
                     <Image
-                        onCLick={() => router.push('/')}
+                        onClick={() => router.push('/')}
                         src="/logo-single-black.png"
                         width={100}
                         height={100}
@@ -28,7 +28,7 @@ export const Sidebar = ({ darkMode }) => {
                     />
                 ) : (
                     <Image
-                        onCLick={() => router.push('/')}
+                        onClick={() => router.push('/')}
                         src="/logo-single-white.png"
                         width={100}
                         height={100}
