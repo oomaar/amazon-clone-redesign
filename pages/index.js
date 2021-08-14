@@ -14,8 +14,8 @@ export default function Home({ products }) {
           <HeadTag />
 
           <Sidebar darkMode={darkMode} />
+          <SearchBar darkMode={darkMode} />
           <Main>
-            <SearchBar darkMode={darkMode} />
             <Banner />
             <ProductFeed products={products} />
           </Main>
