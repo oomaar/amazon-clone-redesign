@@ -19,7 +19,7 @@ export default function Home({ products }) {
             <Banner />
             <ProductFeed products={products} />
           </Main>
-          <Footer />
+          <Footer darkMode={darkMode} />
         </Application>
       </ThemeProvider>
     </ThemeProvider>
