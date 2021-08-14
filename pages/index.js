@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled, { ThemeProvider } from 'styled-components';
-import { Banner, HeadTag, ProductFeed, SearchBar, Sidebar } from "../components";
+import { Banner, Footer, HeadTag, ProductFeed, SearchBar, Sidebar } from "../components";
 import { darkTheme, GlobalStyle, lightTheme, mdScreen, theme, xlScreen } from "../Global/GlobalStyle";
 
 export default function Home({ products }) {
@@ -19,6 +19,7 @@ export default function Home({ products }) {
             <Banner />
             <ProductFeed products={products} />
           </Main>
+          <Footer />
         </Application>
       </ThemeProvider>
     </ThemeProvider>
