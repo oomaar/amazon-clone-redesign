@@ -56,15 +56,11 @@ export const SearchContainer = styled.div`
   transition: 0.5s;
 
   :hover {
-    /* box-shadow: 0 10px 15px -3px hsla(0, 0%, 0%, 0.01),
-        0 4px 6px -2px hsla(0, 0%, 0%, 0.05); */
-        box-shadow: ${({ darkMode }) => darkMode === "light" ? '0 10px 15px -3px hsla(0, 0%, 0%, 0.01), 0 4px 6px -2px hsla(0, 0%, 0%, 0.05)' : '0 10px 15px -3px hsla(220, 13%, 91%, 0.1), 0 4px 6px -2px hsla(220, 13%, 91%, 0.05)'};
+    box-shadow: ${({ darkMode }) => darkMode === "light" ? '0 10px 15px -3px hsla(0, 0%, 0%, 0.01), 0 4px 6px -2px hsla(0, 0%, 0%, 0.05)' : '0 10px 15px -3px hsla(220, 13%, 91%, 0.1), 0 4px 6px -2px hsla(220, 13%, 91%, 0.05)'};
   }
 
   :focus-within {
-    /* box-shadow: 0 10px 15px -3px hsla(0, 0%, 0%, 0.01),
-        0 4px 6px -2px hsla(0, 0%, 0%, 0.05); */
-        box-shadow: ${({ darkMode }) => darkMode === "light" ? '0 10px 15px -3px hsla(0, 0%, 0%, 0.01), 0 4px 6px -2px hsla(0, 0%, 0%, 0.05)' : '0 10px 15px -3px hsla(220, 13%, 91%, 0.1), 0 4px 6px -2px hsla(220, 13%, 91%, 0.05)'};
+    box-shadow: ${({ darkMode }) => darkMode === "light" ? '0 10px 15px -3px hsla(0, 0%, 0%, 0.01), 0 4px 6px -2px hsla(0, 0%, 0%, 0.05)' : '0 10px 15px -3px hsla(220, 13%, 91%, 0.1), 0 4px 6px -2px hsla(220, 13%, 91%, 0.05)'};
   }
 
   @media (min-width: ${mdScreen}px) {
