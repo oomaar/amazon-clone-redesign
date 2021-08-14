@@ -13,6 +13,7 @@ export const ProductFeed = ({ products }) => {
         image
     }) => (
         <Product
+            key={id}
             id={id}
             title={title}
             price={price}
