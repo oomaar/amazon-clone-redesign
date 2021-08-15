@@ -1,5 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Link from "next/link";
+
+const animate = keyframes`
+  from {
+    transform: scale(1);
+  }
+  
+  to {
+    transform: scale(0);
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -14,6 +24,7 @@ export const Container = styled.div`
   margin: auto;
   position: relative;
   color: ${({ theme }) => theme.colors.textColor};
+  animation: ${animate} 0.1s linear none;
 `;
 
 export const ViewContainer = styled.div`

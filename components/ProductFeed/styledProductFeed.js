@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { headerHeight, lgScreen, mdScreen, sidebarWidth, xlScreen } from '../../Global/GlobalStyle';
+import { lgScreen, mdScreen, sidebarWidth, xlScreen } from '../../Global/GlobalStyle';
 
 export const Container = styled.div`
   display: grid;
