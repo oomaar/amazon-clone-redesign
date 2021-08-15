@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { headerHeight, sidebarWidth, mdScreen, smScreen } from '../../Global/GlobalStyle';
 
 export const Nav = styled.nav`
-  background-color: ${({ theme }) => theme.colors.containerColor};
+  background-color: ${({ theme }) => theme.colors.bodyColor};
   box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
@@ -56,7 +56,7 @@ export const Icons = styled.ul`
 `;
 
 export const Icon = styled.div`
-  color: ${({ theme }) => theme.colors.textColor};
+  color: ${({ theme }) => theme.colors.firstColor};
   transition: 0.4s;
   cursor: pointer;
   font-size: clamp(1.5rem, 1.5vw, 1.7rem);
