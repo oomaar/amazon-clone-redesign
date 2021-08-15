@@ -10,6 +10,7 @@ export const Container = styled.div`
   height: 100%;
   width: 100%;
   border-radius: 0.5rem;
+  background-color: ${({ theme }) => theme.colors.inputColor};
   margin: auto;
   position: relative;
   color: ${({ theme }) => theme.colors.textColor};
@@ -25,8 +26,9 @@ export const ViewContainer = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
-  display: none;
+  display: flex;
   transition: 0.5s;
+  opacity: 0;
 `;
 
 export const ViewLink = styled.a`
@@ -42,9 +44,11 @@ export const ViewLink = styled.a`
 export const ImageContainer = styled.div`
   cursor: pointer;
   position: relative;
+  background-color: #fff;
+  border-radius: 0.5rem;
 
   :hover ${ViewContainer} {
-    display: flex;
+    opacity: 1;
   }
 `;
 
@@ -89,6 +93,7 @@ export const Price = styled.p`
   color: #f00;
   text-decoration: line-through;
   margin-left: 0.5rem;
+  font-weight: ${({ theme }) => theme.typography.fontWeight.SemiBold};
 `;
 
 export const Stars = styled.div`
