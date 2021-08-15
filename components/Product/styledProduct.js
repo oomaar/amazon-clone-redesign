@@ -21,7 +21,7 @@ export const ViewContainer = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(229, 229, 229, 0.3);
+  background-color: rgba(129, 129, 129, 0.3);
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
@@ -32,7 +32,7 @@ export const ViewContainer = styled.div`
 export const ViewLink = styled.a`
   font-size: 0.7rem;
   background-color: #fff;
-  padding: 0.3rem 0.6rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
   color: #000;
