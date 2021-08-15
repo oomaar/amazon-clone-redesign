@@ -1,7 +1,6 @@
 import { FiSearch } from "react-icons/fi";
 import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
-import { HiOutlineUserCircle } from "react-icons/hi";
 import {
     Nav,
     SearchContainer,
@@ -11,6 +10,7 @@ import {
     Subcontainer,
     Logo,
 } from "./styledSearchBar";
+import { useState } from "react";
 
 export const SearchBar = ({ darkMode }) => {
     const router = useRouter();
@@ -45,9 +45,6 @@ export const SearchBar = ({ darkMode }) => {
                         />
                     )}
                 </Logo>
-                <Icon className="user__iconSearch">
-                    <HiOutlineUserCircle />
-                </Icon>
             </Subcontainer>
         </Nav>
     );

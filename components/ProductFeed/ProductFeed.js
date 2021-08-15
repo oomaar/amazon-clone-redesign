@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Product } from "..";
 import { FaBars } from "react-icons/fa";
+import { HiOutlineUserCircle } from "react-icons/hi";
 import {
     Container,
     Nav,
+    NavIcons,
     NavIcon,
     List,
     Item,
@@ -52,9 +54,14 @@ export const ProductFeed = ({ products }) => {
     return (
         <div>
             <Nav>
-                <NavIcon onClick={() => setShowList(state => !state)}>
-                    <FaBars />
-                </NavIcon>
+                <NavIcons>
+                    <NavIcon onClick={() => setShowList(state => !state)}>
+                        <FaBars />
+                    </NavIcon>
+                    <NavIcon>
+                        <HiOutlineUserCircle />
+                    </NavIcon>
+                </NavIcons>
                 <List showList={showList}>
                     <li>
                         <Item

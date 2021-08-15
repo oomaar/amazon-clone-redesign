@@ -19,10 +19,10 @@ export const Banner = () => {
                 showThumbs={false}
             >
                 <ImgContainer>
-                    <Img src="/banner/2.jpg" />
+                    <Img src="/banner/1.jpg" />
                 </ImgContainer>
                 <ImgContainer>
-                    <Img src="/banner/1.jpg" />
+                    <Img src="/banner/2.jpg" />
                 </ImgContainer>
                 <ImgContainer>
                     <Img src="/banner/3.jpg" />

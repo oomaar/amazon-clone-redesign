@@ -11,29 +11,23 @@ export const Nav = styled.nav`
   left: 0;
   top: 0;
   height: calc(${headerHeight} * 2);
-  box-shadow: 1px 1px 2px rgba(229, 231, 235, 0.5);
+  box-shadow: none;
   z-index: 100;
-
-  .user__iconSearch {
-    display: block;
-
-    @media (min-width: ${mdScreen}px) {
-      display: none;
-    }
-  }
-
+  padding: 0.5rem 0;
+  
   @media (min-width: ${mdScreen}px) {
     flex-direction: row;
     padding: 0.2rem 1rem;
     justify-content: center;
     left: ${sidebarWidth};
+    box-shadow: 1px 1px 2px rgba(229, 231, 235, 0.9);
   }
 `;
 
 export const Subcontainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   padding: 0 2rem;
 
