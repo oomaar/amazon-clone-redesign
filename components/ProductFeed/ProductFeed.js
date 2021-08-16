@@ -106,7 +106,14 @@ export const ProductFeed = ({ products }) => {
                 </List>
             </Nav>
             <Container>
-                {activeCategory === "all" ? productsComponent : filtering}
+                {activeCategory === "all" ? (
+                    <>
+                        {productsComponent.slice(13, 14)}
+                        {productsComponent.slice(8, 14)}
+                        {productsComponent.slice(0, 8)}
+                        {productsComponent.slice(14, productsComponent.length)}
+                    </>
+                ) : filtering}
             </Container>
         </div>
     );
