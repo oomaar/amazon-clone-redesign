@@ -1,6 +1,6 @@
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { AiOutlineHome } from "react-icons/ai";
-import { BsBookmark } from "react-icons/bs";
+import { BsBookmarksFill, BsBookmarks } from "react-icons/bs";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { BsClockHistory } from "react-icons/bs";
 import Image from "next/image";
@@ -14,13 +14,11 @@ import {
 
 import { AiFillHome } from "react-icons/ai";
 import { IoMdCart } from "react-icons/io";
-import { BsBookmarkFill, BsFillClockFill } from "react-icons/bs";
 import { useState } from "react";
 
 export const Sidebar = ({ darkMode }) => {
     const router = useRouter();
     const [active, setActive] = useState("home");
-    // console.log("🚀 ~ file: Sidebar.js ~ line 21 ~ Sidebar ~ router", router);
 
     return (
         <Nav>
@@ -55,8 +53,8 @@ export const Sidebar = ({ darkMode }) => {
                 </li>
                 <li>
                     <Icon>
-                        <BsBookmark />
-                        {/* <BsBookmarkFill /> */}
+                        {/* <BsBookmarksFill /> */}
+                        <BsBookmarks />
                     </Icon>
                 </li>
                 <li>
