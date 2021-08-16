@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import Link from "next/link";
 
 const animate = keyframes`
   from {
@@ -42,7 +41,7 @@ export const ViewContainer = styled.div`
   opacity: 0;
 `;
 
-export const ViewLink = styled.a`
+export const ViewLink = styled.div`
   font-size: 0.7rem;
   background-color: #fff;
   padding: 0.5rem 1rem;
