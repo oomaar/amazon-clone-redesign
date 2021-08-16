@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { Banner, HeadTag, ProductFeed } from "../components";
+import { Banner, ProductFeed } from "../components";
 import { mdScreen, xlScreen } from "../Global/GlobalStyle";
+import { HeadTag } from '../Global/HeadTag';
 
 export default function Home({ products }) {
   return (
     <Application>
-      <HeadTag />
+      <HeadTag title="Amazon-Clone | Modern Amazon" />
 
       <Main>
         <Banner />

@@ -1,9 +1,9 @@
 import Head from "next/head";
 
-export const HeadTag = () => {
+export const HeadTag = ({ title }) => {
     return (
         <Head>
-            <title>Amazon-Clone | Modern Amazon</title>
+            <title>{title}</title>
             <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
 
             {/* Google Roboto Font */}
