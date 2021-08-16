@@ -99,7 +99,7 @@ export const Discount = styled.p`
 `;
 
 export const Price = styled.p`
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #f00;
   text-decoration: line-through;
   margin-left: 0.5rem;
