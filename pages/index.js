@@ -3,7 +3,6 @@ import { Banner, HeadTag, ProductFeed } from "../components";
 import { mdScreen, xlScreen } from "../Global/GlobalStyle";
 
 export default function Home({ products }) {
-
   return (
     <Application>
       <HeadTag />
@@ -34,8 +33,8 @@ const Main = styled.main`
   }
 `;
 
-export async function getServerSideProps(context) {
-  const products = await fetch("https://fakestoreapi.com/products")
+export async function getServerSideProps() {
+  const products = await fetch(`https://fakestoreapi.com/products`)
     .then(res => res.json());
 
   return {

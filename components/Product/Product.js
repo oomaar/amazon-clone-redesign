@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
 import Currency from "react-currency-formatter";
 import {
@@ -16,9 +18,6 @@ import {
     Stars,
     PrimeContainer,
 } from "./styledProduct";
-import { useState } from "react";
-import { useRouter } from "next/dist/client/router";
-import Link from "next/link";
 
 export const Product = ({
     id,
@@ -34,7 +33,6 @@ export const Product = ({
     const [hasPrime] = useState(Math.random() < 0.5);
     const truncate = (string, n) => string?.length > n ? string.substr(0, n - 1) + '...' : string;
     const discount = price > 100 ? Math.floor(price - (30 / price * 100)) : Math.abs(Math.floor(price - (1 / price * 100)));
-    // const router = useRouter();
 
     return (
         <Container>
@@ -47,7 +45,7 @@ export const Product = ({
                 />
                 <ViewContainer>
                     <ViewLink>
-                        <Link href={'/product/' + id}>
+                        <Link href={`/products/${id}`}>
                             View Product
                         </Link>
                     </ViewLink>
