@@ -12,15 +12,21 @@ import {
     Icon,
 } from "./styledSidebar";
 
+import { AiFillHome } from "react-icons/ai";
+import { IoMdCart } from "react-icons/io";
+import { BsBookmarkFill, BsFillClockFill } from "react-icons/bs";
+import { useState } from "react";
+
 export const Sidebar = ({ darkMode }) => {
     const router = useRouter();
+    const [active, setActive] = useState("home");
+    // console.log("🚀 ~ file: Sidebar.js ~ line 21 ~ Sidebar ~ router", router);
 
     return (
         <Nav>
-            <Logo>
+            <Logo onClick={() => router.push('/')}>
                 {darkMode === 'light' ? (
                     <Image
-                        onClick={() => router.push('/')}
                         src="/logo-single-black.png"
                         width={100}
                         height={100}
@@ -28,7 +34,6 @@ export const Sidebar = ({ darkMode }) => {
                     />
                 ) : (
                     <Image
-                        onClick={() => router.push('/')}
                         src="/logo-single-white.png"
                         width={100}
                         height={100}
@@ -36,25 +41,28 @@ export const Sidebar = ({ darkMode }) => {
                     />
                 )}
             </Logo>
-            <Icons>
+            <Icons darkMode={darkMode}>
                 <li>
-                    <Icon>
-                        <AiOutlineHome />
+                    <Icon onClick={() => router.push('/')}>
+                        {router.route === '/' ? <AiFillHome /> : <AiOutlineHome />}
                     </Icon>
                 </li>
                 <li>
                     <Icon>
                         <RiShoppingCart2Line />
+                        {/* <IoMdCart /> */}
                     </Icon>
                 </li>
                 <li>
                     <Icon>
                         <BsBookmark />
+                        {/* <BsBookmarkFill /> */}
                     </Icon>
                 </li>
                 <li>
                     <Icon>
                         <BsClockHistory />
+                        {/* <BsFillClockFill /> */}
                     </Icon>
                 </li>
             </Icons>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { headerHeight, sidebarWidth, mdScreen, smScreen } from '../../Global/GlobalStyle';
+import { headerHeight, sidebarWidth, mdScreen } from '../../Global/GlobalStyle';
 
 export const Nav = styled.nav`
   background-color: ${({ theme }) => theme.colors.bodyColor};
@@ -47,6 +47,7 @@ export const Icons = styled.ul`
   align-items: center;
   padding: 0;
   width: 100%;
+  color: ${({ darkMode }) => darkMode === 'light' ? "#000" : "#fff"};
   
   @media screen and (min-width: ${mdScreen}px) {
     flex-direction: column;
@@ -56,7 +57,6 @@ export const Icons = styled.ul`
 `;
 
 export const Icon = styled.div`
-  color: ${({ theme }) => theme.colors.firstColor};
   transition: 0.4s;
   cursor: pointer;
   font-size: clamp(1.5rem, 1.5vw, 1.7rem);
