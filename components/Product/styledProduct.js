@@ -41,14 +41,14 @@ export const ViewContainer = styled.div`
   opacity: 0;
 `;
 
-export const ViewLink = styled.div`
-  font-size: 0.7rem;
+export const ViewLink = styled.a`
+  font-size: 0.75rem;
+  text-align: center;
   background-color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 0.9rem;
   border-radius: 0.5rem;
   cursor: pointer;
   color: #000;
-  text-transform: uppercase;
 `;
 
 export const ImageContainer = styled.div`

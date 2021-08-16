@@ -32,7 +32,11 @@ export const Product = ({
     const [rating] = useState(Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING);
     const [hasPrime] = useState(Math.random() < 0.5);
     const truncate = (string, n) => string?.length > n ? string.substr(0, n - 1) + '...' : string;
-    const discount = price > 100 ? Math.floor(price - (30 / price * 100)) : Math.abs(Math.floor(price - (1 / price * 100)));
+    const discount = price > 100 ? (
+        Math.floor(price - (30 / price * 100))
+    ) : (
+        Math.abs(Math.floor(price - (1 / price * 100)))
+    );
 
     return (
         <Container>
@@ -44,11 +48,11 @@ export const Product = ({
                     objectFit="contain"
                 />
                 <ViewContainer>
-                    <ViewLink>
-                        <Link href={`/products/${id}`}>
+                    <Link href={`/products/${id}`}>
+                        <ViewLink>
                             View Product
-                        </Link>
-                    </ViewLink>
+                        </ViewLink>
+                    </Link>
                 </ViewContainer>
             </ImageContainer>
             <ContentBox>
