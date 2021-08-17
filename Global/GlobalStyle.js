@@ -105,4 +105,20 @@ export const GlobalStyle = createGlobalStyle`
   img {
     max-width: 100%;
   }
+
+    // Scroll Bar
+    ::-webkit-scrollbar {
+      width: 0.6rem;
+      background-color: ${({ theme }) => theme.colors.scrollBarColor};
+      border-radius: 0.5rem;
+    }
+  
+    ::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.colors.scrollThumbColor};
+      border-radius: 0.5rem;
+    }
+  
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: ${({ theme }) => theme.colors.textColorLight};
+    }
 `;
