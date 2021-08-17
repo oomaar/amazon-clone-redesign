@@ -11,6 +11,10 @@ export const mdScreen = 568;
 export const lgScreen = 768;
 export const xlScreen = 1024;
 
+// Shadows
+export const shadowLight = '5px 10px 15px -3px hsla(0, 0%, 0%, 1), 2px 4px 6px -2px hsla(0, 0%, 0%, 1)';
+export const shadowDark = '5px 10px 15px -3px hsla(220, 13%, 91%, 1), 2px 4px 6px -2px hsla(220, 13%, 91%, 1)';
+
 export const theme = {
   HeaderHeight: '3rem',
   typography: {
@@ -42,6 +46,8 @@ export const lightTheme = {
     inputColor: `hsl(${hueColor}, 70%, 96%)`,
     bodyColor: `hsl(${hueColor}, 60%, 99%)`,
     containerColor: '#eee',
+    containerColorSecond: 'rgba(0, 0, 0, 0.7)',
+    shadowColor: `${shadowLight}`,
     scrollBarColor: `hsl(${hueColor}, 12%, 90%)`,
     scrollThumbColor: `hsl(${hueColor}, 12%, 80%)`,
   },
@@ -59,6 +65,8 @@ export const darkTheme = {
     inputColor: `hsl(${hueColor}, 29%, 16%)`,
     bodyColor: `hsl(${hueColor}, 28%, 13%)`,
     containerColor: `hsl(${hueColor}, 29%, 16%)`,
+    containerColorSecond: 'rgba(222, 222, 222, 0.7)',
+    shadowColor: `${shadowDark}`,
     scrollBarColor: `hsl(${hueColor}, 12%, 48%)`,
     scrollThumbColor: `hsl(${hueColor}, 12%, 36%)`,
   },
