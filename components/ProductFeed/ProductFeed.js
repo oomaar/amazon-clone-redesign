@@ -19,7 +19,6 @@ export const ProductFeed = ({ products }) => {
     const [showList, setShowList] = useState(false);
     const darkValue = useSelector(selectDark);
     const dispatch = useDispatch();
-
     const productsComponent = products.map(({
         id,
         title,
