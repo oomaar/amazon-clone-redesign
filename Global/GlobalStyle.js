@@ -12,8 +12,8 @@ export const lgScreen = 768;
 export const xlScreen = 1024;
 
 // Shadows
-export const shadowLight = '5px 10px 15px -3px hsla(0, 0%, 0%, 1), 2px 4px 6px -2px hsla(0, 0%, 0%, 1)';
-export const shadowDark = '5px 10px 15px -3px hsla(220, 13%, 91%, 1), 2px 4px 6px -2px hsla(220, 13%, 91%, 1)';
+export const shadowLight = '0px 10px 15px -3px hsla(0, 0%, 0%, 0.06), 0px 4px 6px -2px hsla(0, 0%, 0%, 0.05)';
+export const shadowDark = '0px 10px 15px -3px hsla(220, 13%, 91%, 0.06), 0px 4px 6px -2px hsla(220, 13%, 91%, 0.05)';
 
 export const theme = {
   HeaderHeight: '3rem',

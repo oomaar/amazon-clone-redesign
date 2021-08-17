@@ -3,7 +3,7 @@ import { headerHeight, sidebarWidth, mdScreen } from '../../Global/GlobalStyle';
 
 export const Nav = styled.nav`
   background-color: ${({ theme }) => theme.colors.bodyColor};
-  box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.1);
+  box-shadow: ${({ theme }) => theme.colors.shadowColor};: 1px 2px 7px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -29,13 +29,11 @@ export const Nav = styled.nav`
   top: 6rem;
   right: 0;
   left: 0;
-  box-shadow: 1px 1px 2px rgba(229, 231, 235, 0.9);
   
   @media screen and (min-width: ${mdScreen}px) {
     position: sticky;
     top: 6.03rem;
     left: calc(${sidebarWidth} + 1rem);
-    box-shadow: none;
   }
 `;
 

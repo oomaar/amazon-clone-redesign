@@ -13,7 +13,7 @@ const animate = keyframes`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  box-shadow: 0 10px 15px -3px hsla(0, 0%, 0%, 0.1), 0 4px 6px -2px hsla(0, 0%, 0%, 0.5);
+  box-shadow: ${({ theme }) => theme.colors.shadowColor};
   max-width: 300px;
   max-height: 800px;
   height: 100%;
@@ -99,7 +99,7 @@ export const Discount = styled.p`
 `;
 
 export const Price = styled.p`
-  font-size: 0.8rem;
+  font-size: 0.rem;
   color: #f00;
   text-decoration: line-through;
   margin-left: 0.5rem;
