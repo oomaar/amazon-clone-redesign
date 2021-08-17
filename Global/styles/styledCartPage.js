@@ -1,12 +1,18 @@
 import styled from 'styled-components';
-import { headerHeight, mdScreen, xlScreen } from '../GlobalStyle';
+import { headerHeight, mdScreen, xlScreen, lgScreen } from '../GlobalStyle';
 
 export const Container = styled.main`
   max-width: 1024px;
   margin-top: calc(${headerHeight} * 2);
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
+  padding: 2rem 1rem 0;
+
+  h2 {
+    font-weight: ${({ theme }) => theme.typography.fontWeight.fontBold};
+    font-size: ${({ theme }) => theme.typography.h2FontSize};
+    color: ${({ theme }) => theme.colors.titleColor};
+  }
 
   @media screen and (min-width: ${mdScreen}px) {
     margin-left: 4.5rem;
@@ -21,8 +27,59 @@ export const Container = styled.main`
   }
 `;
 
-export const SubContainer = styled.div``;
+export const SubContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 
-export const ImageContainer = styled.div``;
+  @media screen and (min-width: ${lgScreen}px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+`;
 
-export const InfoContainer = styled.div``;
+export const ImageContainer = styled.div`
+  @media screen and (min-width: ${lgScreen}px) {
+    width: 40%;
+  }
+`;
+
+export const InfoContainer = styled.div`
+  background-color: ${({ theme }) => theme.colors.containerColor};
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+
+  p {
+    color: ${({ theme }) => theme.colors.textColor};
+    font-size: ${({ theme }) => theme.typography.normalFontSize};
+  }
+
+  @media screen and (min-width: ${lgScreen}px) {
+    width: 50%;
+  }
+`;
+
+export const Title = styled.h3`
+  font-weight: ${({ theme }) => theme.typography.fontWeight.fontBold};
+  font-size: ${({ theme }) => theme.typography.h3FontSize};
+  color: ${({ theme }) => theme.colors.titleColor};
+`;
+
+export const InfoButton = styled.button`
+  border: 0;
+  outline: 0;
+  font-size: 0.9rem;
+  font-weight: ${({ theme }) => theme.typography.fontWeight.fontBold};
+  background-color: hsl(32, 80%, 74%);
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.8;
+  transition: 0.5s;
+  margin-right: 1rem;
+
+  :hover {
+    opacity: 1;
+  }
+`;

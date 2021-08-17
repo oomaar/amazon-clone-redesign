@@ -6,6 +6,8 @@ import { FaLocationArrow } from "react-icons/fa";
 import { MdAddShoppingCart } from "react-icons/md";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { Product } from "../../components";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../Redux/slices/cartSlice";
 import {
     Container,
     ProductContainer,
@@ -28,11 +30,11 @@ import {
 
 const SingleProduct = ({ product, products }) => {
     const [hasPrime] = useState(Math.random() < 0.5);
-    const price = product.price;
-    const discount = price > 100 ? (
-        Math.floor(price - (30 / price * 100))
+    const productPrice = product.price;
+    const discount = productPrice > 100 ? (
+        Math.floor(productPrice - (30 / productPrice * 100))
     ) : (
-        Math.abs(Math.floor(price - (1 / price * 100)))
+        Math.abs(Math.floor(productPrice - (1 / productPrice * 100)))
     );
     const randomProductMin = Math.floor(Math.random() * 10) + 1;
     const randomProductMax = Math.floor(Math.random() * 10) + 10;
@@ -47,6 +49,25 @@ const SingleProduct = ({ product, products }) => {
             image={product.image}
         />
     ));
+
+    const dispatch = useDispatch();
+    const id = product.id;
+    const title = product.title;
+    const price = product.price;
+    const description = product.description;
+    const category = product.category;
+    const image = product.image;
+    const addItemToCart = () => {
+        const cartProduct = {
+            id,
+            title,
+            price,
+            description,
+            category,
+            image,
+        };
+        dispatch(addToCart(cartProduct));
+    };
 
     return (
         <div>
@@ -71,7 +92,7 @@ const SingleProduct = ({ product, products }) => {
                                 <Currency quantity={discount} currency='EGP' />
                             </Discount>
                             <Price>
-                                <Currency quantity={price} currency='EGP' />
+                                <Currency quantity={productPrice} currency='EGP' />
                             </Price>
                         </PriceContainer>
                         {hasPrime && (
@@ -88,7 +109,7 @@ const SingleProduct = ({ product, products }) => {
                             </PrimeContainer>
                         )}
                         <ButtonContainer>
-                            <AddButton>
+                            <AddButton onClick={addItemToCart}>
                                 <MdAddShoppingCart />
                                 <span>Add to Cart</span>
                             </AddButton>
