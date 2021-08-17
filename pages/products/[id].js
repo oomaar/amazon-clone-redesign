@@ -142,20 +142,3 @@ export const getStaticProps = async (context) => {
         props: { product: data, products }
     };
 };
-
-// export async function getStaticPaths() {
-//     const res = await fetch("https://fakestoreapi.com/products");
-//     const data = await res.json();
-
-//     const paths = data.map(product => {
-//         return {
-//             params: { id: product.id.toString() }
-//         };
-//     });
-
-//     return {
-//         paths,
-//         // This Mistake made me stuck for 1 day !
-//         fallBack: false
-//     };
-// };

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { headerHeight, lgScreen, mdScreen, xlScreen } from "../GlobalStyle";
 
-// Layout
-
 export const Container = styled.main`
   max-width: 1024px;
   margin-top: calc(${headerHeight} * 2);
