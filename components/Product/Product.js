@@ -21,7 +21,7 @@ import {
 
 export const Product = ({
     id,
-    title,
+    // title,
     price,
     description,
     category,
