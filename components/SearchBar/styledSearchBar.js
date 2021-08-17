@@ -29,19 +29,18 @@ export const Subcontainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0 2rem;
+  padding-right: 1rem;
 
   @media (min-width: ${mdScreen}px) {
     width: unset;
     padding: 0;
-    display: block;
   }
 `;
 
 export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 90%;
   padding: 0.5rem 1rem;
   border-radius: 15px;
   margin: 0 auto;
@@ -101,5 +100,18 @@ export const Logo = styled.div`
 
   @media (min-width: ${mdScreen}px) {
     width: 200px;
+  }
+`;
+
+export const ThemeIcon = styled.div`
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.firstColorAlt};
+  display: none;
+  justify-content: center;
+  margin: 0 1rem;
+
+  @media (min-width:${mdScreen}px) {
+    display: flex;
   }
 `;

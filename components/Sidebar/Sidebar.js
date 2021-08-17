@@ -5,6 +5,10 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 import { BsClockHistory } from "react-icons/bs";
 import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
+import { AiFillHome } from "react-icons/ai";
+import { IoMdCart } from "react-icons/io";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import {
     Nav,
     Logo,
@@ -12,18 +16,15 @@ import {
     Icon,
 } from "./styledSidebar";
 
-import { AiFillHome } from "react-icons/ai";
-import { IoMdCart } from "react-icons/io";
-import { useState } from "react";
-
-export const Sidebar = ({ darkMode }) => {
+export const Sidebar = () => {
     const router = useRouter();
     const [active, setActive] = useState("home");
+    const darkValue = useSelector(state => state.dark.dark);
 
     return (
         <Nav>
             <Logo onClick={() => router.push('/')}>
-                {darkMode === 'light' ? (
+                {darkValue === 'light' ? (
                     <Image
                         src="/logo-single-black.png"
                         width={100}
@@ -39,7 +40,7 @@ export const Sidebar = ({ darkMode }) => {
                     />
                 )}
             </Logo>
-            <Icons darkMode={darkMode}>
+            <Icons darkValue={darkValue}>
                 <li>
                     <Icon onClick={() => router.push('/')}>
                         {router.route === '/' ? <AiFillHome /> : <AiOutlineHome />}

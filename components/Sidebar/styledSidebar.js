@@ -3,7 +3,7 @@ import { headerHeight, sidebarWidth, mdScreen } from '../../Global/GlobalStyle';
 
 export const Nav = styled.nav`
   background-color: ${({ theme }) => theme.colors.bodyColor};
-  box-shadow: ${({ theme }) => theme.colors.shadowColor};: 1px 2px 7px rgba(0, 0, 0, 0.1);
+  box-shadow: ${({ theme }) => theme.colors.shadowColor};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,7 +47,7 @@ export const Icons = styled.ul`
   align-items: center;
   padding: 0;
   width: 100%;
-  color: ${({ darkMode }) => darkMode === 'light' ? "#000" : "#fff"};
+  color: ${({ theme }) => theme.colors.containerColorSecond};
   
   @media screen and (min-width: ${mdScreen}px) {
     flex-direction: column;
@@ -60,6 +60,7 @@ export const Icon = styled.div`
   transition: 0.4s;
   cursor: pointer;
   font-size: clamp(1.5rem, 1.5vw, 1.7rem);
+  color: ${({ theme }) => theme.colors.containerColorSecond};
 
   :hover {
     transform: scale(1.1);

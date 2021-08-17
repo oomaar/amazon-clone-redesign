@@ -1,5 +1,6 @@
 import { GoChevronRight } from "react-icons/go";
 import Image from "next/image";
+import { useSelector } from "react-redux";
 import {
     FooterContainer,
     FooterSubContainer,
@@ -10,7 +11,9 @@ import {
     FooterCopy,
 } from "./styledFooter";
 
-export const Footer = ({ darkMode }) => {
+export const Footer = () => {
+    const darkValue = useSelector(state => state.dark.dark);
+
     return (
         <FooterContainer>
             <FooterSubContainer>
@@ -49,7 +52,7 @@ export const Footer = ({ darkMode }) => {
             </FooterSubContainer>
             <CopyContainer>
                 <FooterLogo>
-                    {darkMode === 'light' ? (
+                    {darkValue === 'light' ? (
                         <Image
                             src="/logo-single-black.png"
                             width={50}

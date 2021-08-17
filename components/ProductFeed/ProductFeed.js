@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Product } from "..";
 import { FaBars } from "react-icons/fa";
 import { HiOutlineUserCircle } from "react-icons/hi";
+import { BiSun, BiMoon } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { setDarkMode } from "../../Redux/slices/darkSlice";
 import {
     Container,
     Nav,
@@ -14,6 +17,8 @@ import {
 export const ProductFeed = ({ products }) => {
     const [activeCategory, setActiveCategory] = useState("all");
     const [showList, setShowList] = useState(false);
+    const darkValue = useSelector(state => state.dark.dark);
+    const dispatch = useDispatch();
 
     const productsComponent = products.map(({
         id,
@@ -51,12 +56,54 @@ export const ProductFeed = ({ products }) => {
         />
     ));
 
+    const checkTheme = () => {
+        switch (darkValue) {
+            case "light":
+                dispatch(setDarkMode("dark"));
+                return localStorage.setItem("darkValue", "dark")
+
+            case "dark":
+                dispatch(setDarkMode("light"));
+                return localStorage.setItem("darkValue", "light")
+
+            default:
+                dispatch(setDarkMode("light"));
+                return localStorage.setItem("darkValue", "light")
+        };
+    };
+
+    const handleLight = () => {
+        checkTheme();
+        dispatch(setDarkMode("light"));
+    };
+
+    const handleDark = () => {
+        checkTheme();
+        dispatch(setDarkMode("dark"));
+    };
+
+    useEffect(() => {
+        if (localStorage.getItem("darkValue")) {
+            const darkerValue = localStorage.getItem("darkValue");
+            dispatch(setDarkMode(darkerValue));
+        } else {
+            checkTheme(null);
+        };
+    });
+
     return (
         <div>
             <Nav>
                 <NavIcons>
                     <NavIcon onClick={() => setShowList(state => !state)}>
                         <FaBars />
+                    </NavIcon>
+                    <NavIcon>
+                        {darkValue === 'light' ? (
+                            <BiMoon onClick={handleDark} />
+                        ) : (
+                            <BiSun onClick={handleLight} />
+                        )}
                     </NavIcon>
                     <NavIcon>
                         <HiOutlineUserCircle />

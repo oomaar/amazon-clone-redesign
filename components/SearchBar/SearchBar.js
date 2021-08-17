@@ -1,6 +1,10 @@
+import { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
+import { BiSun, BiMoon } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { setDarkMode } from "../../Redux/slices/darkSlice";
 import {
     Nav,
     SearchContainer,
@@ -8,16 +12,60 @@ import {
     InputContainer,
     Input,
     Subcontainer,
+    ThemeIcon,
     Logo,
 } from "./styledSearchBar";
-import { useState } from "react";
 
-export const SearchBar = ({ darkMode }) => {
+export const SearchBar = () => {
     const router = useRouter();
+    const darkValue = useSelector(state => state.dark.dark);
+    const dispatch = useDispatch();
+
+    const checkTheme = () => {
+        switch (darkValue) {
+            case "light":
+                dispatch(setDarkMode("dark"));
+                return localStorage.setItem("darkValue", "dark")
+
+            case "dark":
+                dispatch(setDarkMode("light"));
+                return localStorage.setItem("darkValue", "light")
+
+            default:
+                dispatch(setDarkMode("light"));
+                return localStorage.setItem("darkValue", "light")
+        };
+    };
+
+    const handleLight = () => {
+        checkTheme();
+        dispatch(setDarkMode("light"));
+    };
+
+    const handleDark = () => {
+        checkTheme();
+        dispatch(setDarkMode("dark"));
+    };
+
+    useEffect(() => {
+        if (localStorage.getItem("darkValue")) {
+            const darkerValue = localStorage.getItem("darkValue");
+            dispatch(setDarkMode(darkerValue));
+        } else {
+            checkTheme(null);
+        };
+    });
 
     return (
         <Nav>
-            <SearchContainer darkMode={darkMode}>
+            <ThemeIcon>
+                {darkValue === 'light' ? (
+                    <BiMoon onClick={handleDark} />
+                ) : (
+                    <BiSun onClick={handleLight} />
+                )}
+            </ThemeIcon>
+            <SearchContainer>
                 <Icon>
                     <FiSearch />
                 </Icon>
@@ -27,7 +75,7 @@ export const SearchBar = ({ darkMode }) => {
             </SearchContainer>
             <Subcontainer>
                 <Logo>
-                    {darkMode === 'light' ? (
+                    {darkValue === 'light' ? (
                         <Image
                             onClick={() => router.push('/')}
                             src="/logo-black.png"
