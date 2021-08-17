@@ -83,3 +83,54 @@ export const InfoButton = styled.button`
     opacity: 1;
   }
 `;
+
+export const SubInfo = styled.div`
+  @media screen and (min-width: ${lgScreen}px) {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
+`;
+
+export const ItemInfoContainer = styled.div`
+  box-shadow: ${({ theme }) => theme.colors.shadowColor};
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  
+  p {
+    color: ${({ theme }) => theme.colors.textColorLight};
+  }
+
+  @media screen and (min-width: ${lgScreen}px) {
+    width: 40%;
+  }
+`;
+
+export const SubTotal = styled.h2`
+  font-size: ${({ theme }) => theme.typography.h2FontSize};
+  color: ${({ theme }) => theme.colors.titleColor};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.fontBold};
+`;
+
+export const ItemsNumber = styled.h3`
+  font-size: ${({ theme }) => theme.typography.normalFontSize};
+  color: ${({ theme }) => theme.colors.textColor};
+`;
+
+export const PrimeContainer = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: hsl(108, 16%, 91%);
+  color: hsl(111, 19%, 71%);
+  font-size: ${({ theme }) => theme.typography.smallFontSize};
+  padding: 0 0.5rem;
+  border-radius: 5px;
+
+  p {
+    color: hsl(111, 19%, 71%);
+  }
+`;
+
+export const PrimeIcon = styled.div`
+  margin-right: 0.5rem;
+`;

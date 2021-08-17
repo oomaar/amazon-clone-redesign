@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import Currency from "react-currency-formatter";
 import { useSelector } from "react-redux";
-import { selectItems } from "../Redux/slices/cartSlice";
+import { selectItems, selectTotal } from "../Redux/slices/cartSlice";
+import { BsCheckAll } from "react-icons/bs";
+import { CartProduct } from "../components";
+import { useState } from "react";
 import {
     Container,
     SubContainer,
@@ -9,11 +13,18 @@ import {
     InfoContainer,
     Title,
     InfoButton,
+    SubInfo,
+    ItemInfoContainer,
+    SubTotal,
+    ItemsNumber,
+    PrimeContainer,
+    PrimeIcon,
 } from "../Global/styles/styledCartPage";
-import { CartProduct } from "../components";
 
 const Cart = () => {
     const items = useSelector(selectItems);
+    const totalPrice = useSelector(selectTotal);
+    const [hasPrime] = useState(Math.random() < 0.5);
 
     return (
         <Container>
@@ -40,11 +51,30 @@ const Cart = () => {
                     </InfoContainer>
                 </SubContainer>
             ) : (
-                <>
+                <SubInfo>
                     {items.map((item, i) => (
-                        <CartProduct item={item} key={i} />
+                        <CartProduct item={item} items={items} key={i} />
                     ))}
-                </>
+                    <ItemInfoContainer>
+                        <Title>Checkout</Title>
+                        {hasPrime && (
+                            <PrimeContainer>
+                                <PrimeIcon>
+                                    <BsCheckAll />
+                                </PrimeIcon>
+                                <p>
+                                    Your order is eligable for Free Delivery
+                                </p>
+                            </PrimeContainer>
+                        )}
+                        <SubTotal>
+                            Sub-Total: <Currency quantity={totalPrice} currency='EGP' />
+                        </SubTotal>
+                        <ItemsNumber>Number of Items: {items.length}</ItemsNumber>
+                        <p>This price is exclusive of taxes. GST will be added during checkout.</p>
+                        <InfoButton>Proceed to Payment</InfoButton>
+                    </ItemInfoContainer>
+                </SubInfo>
             )}
         </Container>
     );
