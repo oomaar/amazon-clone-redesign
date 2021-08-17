@@ -1,7 +1,6 @@
-import styled from 'styled-components';
 import { Banner, ProductFeed } from "../components";
-import { mdScreen, xlScreen } from "../Global/GlobalStyle";
 import { HeadTag } from '../Global/HeadTag';
+import { Application, Main } from "../Global/styles/styledIndexPage";
 
 export default function Home({ products }) {
   return (
@@ -15,24 +14,6 @@ export default function Home({ products }) {
     </Application>
   );
 };
-
-const Application = styled.div``;
-
-const Main = styled.main`
-  max-width: 1024px;
-
-  @media screen and (min-width: ${mdScreen}px) {
-    margin: 0 0 0 4.5rem;
-  }
-
-  @media screen and (min-width: ${xlScreen}px) {
-    margin: 0 auto 0 4.5rem;
-  }
-
-  @media screen and (min-width: 1160px) {
-    margin: 0 auto;
-  }
-`;
 
 export async function getServerSideProps() {
   const products = await fetch(`https://fakestoreapi.com/products`)
