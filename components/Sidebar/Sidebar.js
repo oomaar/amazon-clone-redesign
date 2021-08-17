@@ -8,16 +8,19 @@ import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
 import { useSelector } from "react-redux";
 import { selectDark } from "../../Redux/slices/darkSlice";
+import { selectItems } from "../../Redux/slices/cartSlice";
 import {
     Nav,
     Logo,
     Icons,
     Icon,
+    CartCount,
 } from "./styledSidebar";
 
 export const Sidebar = () => {
     const router = useRouter();
     const darkValue = useSelector(selectDark);
+    const items = useSelector(selectItems);
 
     return (
         <Nav>
@@ -45,10 +48,13 @@ export const Sidebar = () => {
                     </Icon>
                 </li>
                 <li>
-                    <Icon onClick={() => router.push('/cart')}>
+                    <Icon className="cart__icon" onClick={() => router.push('/cart')}>
                         {/* <RiShoppingCart2Line /> */}
                         {/* <IoMdCart /> */}
                         {router.route === '/cart' ? <IoMdCart /> : <RiShoppingCart2Line />}
+                        <CartCount>
+                            <p>{items.length}</p>
+                        </CartCount>
                     </Icon>
                 </li>
                 <li>

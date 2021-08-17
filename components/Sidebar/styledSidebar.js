@@ -48,6 +48,10 @@ export const Icons = styled.ul`
   padding: 0;
   width: 100%;
   color: ${({ theme }) => theme.colors.containerColorSecond};
+
+  .cart__icon {
+    position: relative;
+  }
   
   @media screen and (min-width: ${mdScreen}px) {
     flex-direction: column;
@@ -65,4 +69,19 @@ export const Icon = styled.div`
   :hover {
     transform: scale(1.1);
   }
+`;
+
+export const CartCount = styled.div`
+  background-color: hsl(32, 80%, 74%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.9rem;
+  color: #fff;
+  position: absolute;
+  top: -10px;
+  right: -10px;
 `;
