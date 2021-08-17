@@ -52,7 +52,7 @@ export const Icons = styled.ul`
   @media screen and (min-width: ${mdScreen}px) {
     flex-direction: column;
     justify-content: space-between;
-    height: 25%;
+    height: 23%;
   }
 `;
 
