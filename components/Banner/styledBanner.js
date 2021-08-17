@@ -58,7 +58,3 @@ export const Container = styled.div`
   -webkit-transform: rotate(135deg);
 }
 `;
-
-export const ImgContainer = styled.div``;
-
-export const Img = styled.img``;

@@ -2,8 +2,6 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {
     Container,
-    ImgContainer,
-    Img,
 } from "./styledBanner";
 
 export const Banner = () => {
@@ -18,24 +16,24 @@ export const Banner = () => {
                 showIndicators={false}
                 showThumbs={false}
             >
-                <ImgContainer>
-                    <Img src="/banner/1.jpg" />
-                </ImgContainer>
-                <ImgContainer>
-                    <Img src="/banner/2.jpg" />
-                </ImgContainer>
-                <ImgContainer>
-                    <Img src="/banner/3.jpg" />
-                </ImgContainer>
-                <ImgContainer>
-                    <Img src="/banner/4.jpg" />
-                </ImgContainer>
-                <ImgContainer>
-                    <Img src="/banner/5.jpg" />
-                </ImgContainer>
-                <ImgContainer>
-                    <Img src="/banner/6.jpg" />
-                </ImgContainer>
+                <div>
+                    <img src="/banner/1.jpg" />
+                </div>
+                <div>
+                    <img src="/banner/2.jpg" />
+                </div>
+                <div>
+                    <img src="/banner/3.jpg" />
+                </div>
+                <div>
+                    <img src="/banner/4.jpg" />
+                </div>
+                <div>
+                    <img src="/banner/5.jpg" />
+                </div>
+                <div>
+                    <img src="/banner/6.jpg" />
+                </div>
             </Carousel>
         </Container>
     );
