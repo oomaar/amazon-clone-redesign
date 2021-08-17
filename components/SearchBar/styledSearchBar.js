@@ -106,7 +106,7 @@ export const Logo = styled.div`
 export const ThemeIcon = styled.div`
   font-size: 1.4rem;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.firstColorAlt};
+  color: ${({ theme }) => theme.colors.firstColor};
   display: none;
   justify-content: center;
   margin: 0 1rem;

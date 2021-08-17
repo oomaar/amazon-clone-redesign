@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
