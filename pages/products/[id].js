@@ -29,6 +29,7 @@ import {
 } from '../../Global/styles/styledProductPage';
 
 const SingleProduct = ({ product, products }) => {
+    const dispatch = useDispatch();
     const [hasPrime] = useState(Math.random() < 0.5);
     const productPrice = product.price;
     const discount = productPrice > 100 ? (
@@ -50,23 +51,8 @@ const SingleProduct = ({ product, products }) => {
         />
     ));
 
-    const dispatch = useDispatch();
-    const id = product.id;
-    const title = product.title;
-    const price = product.price;
-    const description = product.description;
-    const category = product.category;
-    const image = product.image;
     const addItemToCart = () => {
-        const cartProduct = {
-            id,
-            title,
-            price,
-            description,
-            category,
-            image,
-        };
-        dispatch(addToCart(cartProduct));
+        dispatch(addToCart(product));
     };
 
     return (
