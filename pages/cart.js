@@ -10,6 +10,7 @@ import {
     Title,
     InfoButton,
 } from "../Global/styles/styledCartPage";
+import { CartProduct } from "../components";
 
 const Cart = () => {
     const items = useSelector(selectItems);
@@ -39,7 +40,11 @@ const Cart = () => {
                     </InfoContainer>
                 </SubContainer>
             ) : (
-                <h1>Display Cart Here</h1>
+                <>
+                    {items.map((item, i) => (
+                        <CartProduct item={item} key={i} />
+                    ))}
+                </>
             )}
         </Container>
     );
