@@ -3,7 +3,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { BsBookmarksFill, BsBookmarks, BsClockHistory } from "react-icons/bs";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { AiFillHome } from "react-icons/ai";
-// import { IoMdCart } from "react-icons/io";
+import { IoMdCart } from "react-icons/io";
 import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
 import { useSelector } from "react-redux";
@@ -45,9 +45,10 @@ export const Sidebar = () => {
                     </Icon>
                 </li>
                 <li>
-                    <Icon>
-                        <RiShoppingCart2Line />
+                    <Icon onClick={() => router.push('/cart')}>
+                        {/* <RiShoppingCart2Line /> */}
                         {/* <IoMdCart /> */}
+                        {router.route === '/cart' ? <IoMdCart /> : <RiShoppingCart2Line />}
                     </Icon>
                 </li>
                 <li>
