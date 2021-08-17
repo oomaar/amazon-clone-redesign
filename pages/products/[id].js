@@ -9,7 +9,6 @@ import { Product } from "../../components";
 import {
     Container,
     ProductContainer,
-    SubContainer,
     ImageContainer,
     InfoContainer,
     Title,
@@ -24,13 +23,10 @@ import {
     AddButton,
     BookMark,
     BookIcon,
-    AlsoLikeContainer,
-    HeadingText,
     LikeProduct,
 } from '../../Global/styles/styledProductPage';
 
 const SingleProduct = ({ product, products }) => {
-    console.log("🚀 ~ file: [id].js ~ line 33 ~ SingleProduct ~ products", products);
     const [hasPrime] = useState(Math.random() < 0.5);
     const price = product.price;
     const discount = price > 100 ? (
@@ -57,9 +53,7 @@ const SingleProduct = ({ product, products }) => {
             <HeadTag title={`Product | ${product.category}`} />
 
             <Container>
-                {/* TopBox */}
                 <ProductContainer>
-                    {/* Left Box */}
                     <ImageContainer>
                         <Image
                             src={product.image}
@@ -69,7 +63,6 @@ const SingleProduct = ({ product, products }) => {
                         />
                     </ImageContainer>
 
-                    {/* RightBox */}
                     <InfoContainer>
                         <Title>{product.title}</Title>
                         <Description>{product.description}.</Description>
@@ -109,15 +102,12 @@ const SingleProduct = ({ product, products }) => {
                     </InfoContainer>
                 </ProductContainer>
 
-                {/* Bottom Box */}
-                <SubContainer>
-                    <AlsoLikeContainer>
-                        <HeadingText>You Might also Like</HeadingText>
-                        <LikeProduct>
-                            {productComponent.slice(randomProductMin, randomProductMax)}
-                        </LikeProduct>
-                    </AlsoLikeContainer>
-                </SubContainer>
+                <div>
+                    <h3>You Might also Like</h3>
+                    <LikeProduct>
+                        {productComponent.slice(randomProductMin, randomProductMax)}
+                    </LikeProduct>
+                </div>
             </Container>
         </div>
     );

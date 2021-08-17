@@ -36,10 +36,6 @@ export const ProductContainer = styled.div`
   }
 `;
 
-export const SubContainer = styled.div``;
-
-// El Container el fo2
-
 export const ImageContainer = styled.div`
   width: 90%;
   box-shadow: ${({ theme }) => theme.colors.shadowColor};
@@ -147,17 +143,6 @@ export const BookMark = styled.div`
 export const BookIcon = styled.div`
   color: #fff;
 `;
-
-// El Container el ta7t
-
-export const AlsoLikeContainer = styled.div``;
-
-export const HeadingText = styled.h3``;
-
-// bdal kol da 7awel tgeb kam product component gahzen w zai el fol malhom !
-export const SubImageContainer = styled.div``;
-
-export const SubImageText = styled.h3``;
 
 export const LikeProduct = styled.div`
   display: grid;
