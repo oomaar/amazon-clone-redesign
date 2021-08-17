@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { scaleAnimation } from '../GlobalAnimation';
 import { headerHeight, lgScreen, mdScreen, xlScreen } from "../GlobalStyle";
 
 export const Container = styled.main`
@@ -41,6 +42,7 @@ export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.inputColor};
+  animation: ${scaleAnimation} 0.1s linear none;
 
   @media screen and (min-width: ${lgScreen}px) {
     width: 40%;
