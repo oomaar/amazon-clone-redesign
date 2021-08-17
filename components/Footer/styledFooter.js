@@ -13,6 +13,20 @@ export const FooterContainer = styled.footer`
   }
 `;
 
+export const TopButton = styled.a`
+  color: ${({ theme }) => theme.colors.textColor};
+  background-color: ${({ theme }) => theme.colors.inputColor};
+  padding: 1rem 0;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  box-shadow: ${({ theme }) => theme.colors.shadowColor};
+
+  @media screen and (min-width: ${mdScreen}px) {
+    margin-left: ${sidebarWidth};
+  }
+`;
+
 export const FooterSubContainer = styled.div`
   display: grid;
   gap: 1.5rem;
@@ -52,8 +66,6 @@ export const CopyContainer = styled.div`
     width: 40%;
   }
 `;
-
-export const FooterLogo = styled.div``;
 
 export const FooterCopy = styled.h6`
   span {
