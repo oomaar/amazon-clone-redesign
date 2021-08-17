@@ -2,9 +2,10 @@ import { ThemeProvider } from "styled-components";
 import { Footer, SearchBar, Sidebar } from "../components";
 import { darkTheme, GlobalStyle, lightTheme, theme } from "./GlobalStyle";
 import { useSelector } from 'react-redux';
+import { selectDark } from "../Redux/slices/darkSlice";
 
 const Layout = ({ children }) => {
-    const darkValue = useSelector(state => state.dark.dark);
+    const darkValue = useSelector(selectDark);
 
     return (
         <ThemeProvider theme={theme}>

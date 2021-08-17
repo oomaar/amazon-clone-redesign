@@ -4,7 +4,7 @@ import { FaBars } from "react-icons/fa";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { BiSun, BiMoon } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
-import { setDarkMode } from "../../Redux/slices/darkSlice";
+import { selectDark, setDarkMode } from "../../Redux/slices/darkSlice";
 import {
     Container,
     Nav,
@@ -17,7 +17,7 @@ import {
 export const ProductFeed = ({ products }) => {
     const [activeCategory, setActiveCategory] = useState("all");
     const [showList, setShowList] = useState(false);
-    const darkValue = useSelector(state => state.dark.dark);
+    const darkValue = useSelector(selectDark);
     const dispatch = useDispatch();
 
     const productsComponent = products.map(({

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
 import { BiSun, BiMoon } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
-import { setDarkMode } from "../../Redux/slices/darkSlice";
+import { selectDark, setDarkMode } from "../../Redux/slices/darkSlice";
 import {
     Nav,
     SearchContainer,
@@ -18,7 +18,7 @@ import {
 
 export const SearchBar = () => {
     const router = useRouter();
-    const darkValue = useSelector(state => state.dark.dark);
+    const darkValue = useSelector(selectDark);
     const dispatch = useDispatch();
 
     const checkTheme = () => {

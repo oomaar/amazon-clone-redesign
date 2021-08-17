@@ -1,14 +1,13 @@
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { AiOutlineHome } from "react-icons/ai";
-import { BsBookmarksFill, BsBookmarks } from "react-icons/bs";
+import { BsBookmarksFill, BsBookmarks, BsClockHistory } from "react-icons/bs";
 import { HiOutlineUserCircle } from "react-icons/hi";
-import { BsClockHistory } from "react-icons/bs";
-import Image from "next/image";
-import { useRouter } from "next/dist/client/router";
 import { AiFillHome } from "react-icons/ai";
 import { IoMdCart } from "react-icons/io";
-import { useState } from "react";
+import Image from "next/image";
+import { useRouter } from "next/dist/client/router";
 import { useSelector } from "react-redux";
+import { selectDark } from "../../Redux/slices/darkSlice";
 import {
     Nav,
     Logo,
@@ -18,8 +17,7 @@ import {
 
 export const Sidebar = () => {
     const router = useRouter();
-    const [active, setActive] = useState("home");
-    const darkValue = useSelector(state => state.dark.dark);
+    const darkValue = useSelector(selectDark);
 
     return (
         <Nav>

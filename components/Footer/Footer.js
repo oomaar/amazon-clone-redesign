@@ -1,6 +1,7 @@
 import { GoChevronRight } from "react-icons/go";
 import Image from "next/image";
 import { useSelector } from "react-redux";
+import { selectDark } from "../../Redux/slices/darkSlice";
 import {
     FooterContainer,
     FooterSubContainer,
@@ -12,7 +13,7 @@ import {
 } from "./styledFooter";
 
 export const Footer = () => {
-    const darkValue = useSelector(state => state.dark.dark);
+    const darkValue = useSelector(selectDark);
 
     return (
         <FooterContainer>
