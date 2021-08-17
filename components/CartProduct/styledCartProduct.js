@@ -13,7 +13,6 @@ export const Container = styled.div`
   @media screen and (min-width: ${lgScreen}px) {
     flex-direction: row;
     justify-content: space-between;
-    width: 55%;
   }
 `;
 

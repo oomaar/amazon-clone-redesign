@@ -84,11 +84,29 @@ export const InfoButton = styled.button`
   }
 `;
 
+export const SubBox = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: ${lgScreen}px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+export const CartProductContainer = styled.div`
+  @media screen and (min-width: ${lgScreen}px) {
+    width: 55%;
+  }
+`;
+
 export const SubInfo = styled.div`
   @media screen and (min-width: ${lgScreen}px) {
     display: flex;
     justify-content: space-between;
     margin: 2rem 0;
+    width: 40%;
+    height: 340px;
   }
 `;
 
@@ -99,10 +117,6 @@ export const ItemInfoContainer = styled.div`
   
   p {
     color: ${({ theme }) => theme.colors.textColorLight};
-  }
-
-  @media screen and (min-width: ${lgScreen}px) {
-    width: 40%;
   }
 `;
 

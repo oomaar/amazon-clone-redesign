@@ -19,6 +19,8 @@ import {
     ItemsNumber,
     PrimeContainer,
     PrimeIcon,
+    CartProductContainer,
+    SubBox,
 } from "../Global/styles/styledCartPage";
 
 const Cart = () => {
@@ -51,30 +53,34 @@ const Cart = () => {
                     </InfoContainer>
                 </SubContainer>
             ) : (
-                <SubInfo>
-                    {items.map((item, i) => (
-                        <CartProduct item={item} items={items} key={i} />
-                    ))}
-                    <ItemInfoContainer>
-                        <Title>Checkout</Title>
-                        {hasPrime && (
-                            <PrimeContainer>
-                                <PrimeIcon>
-                                    <BsCheckAll />
-                                </PrimeIcon>
-                                <p>
-                                    Your order is eligable for Free Delivery
-                                </p>
-                            </PrimeContainer>
-                        )}
-                        <SubTotal>
-                            Sub-Total: <Currency quantity={totalPrice} currency='EGP' />
-                        </SubTotal>
-                        <ItemsNumber>Number of Items: {items.length}</ItemsNumber>
-                        <p>This price is exclusive of taxes. GST will be added during checkout.</p>
-                        <InfoButton>Proceed to Payment</InfoButton>
-                    </ItemInfoContainer>
-                </SubInfo>
+                <SubBox>
+                    <CartProductContainer >
+                        {items.map((item, i) => (
+                            <CartProduct key={i} item={item} items={items} />
+                        ))}
+                    </CartProductContainer>
+                    <SubInfo>
+                        <ItemInfoContainer>
+                            <Title>Checkout</Title>
+                            {hasPrime && (
+                                <PrimeContainer>
+                                    <PrimeIcon>
+                                        <BsCheckAll />
+                                    </PrimeIcon>
+                                    <p>
+                                        Your order is eligable for Free Delivery
+                                    </p>
+                                </PrimeContainer>
+                            )}
+                            <SubTotal>
+                                Sub-Total: <Currency quantity={totalPrice} currency='EGP' />
+                            </SubTotal>
+                            <ItemsNumber>Number of Items: {items.length}</ItemsNumber>
+                            <p>This price is exclusive of taxes. GST will be added during checkout.</p>
+                            <InfoButton>Proceed to Payment</InfoButton>
+                        </ItemInfoContainer>
+                    </SubInfo>
+                </SubBox>
             )}
         </Container>
     );
