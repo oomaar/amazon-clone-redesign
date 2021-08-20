@@ -27,6 +27,11 @@ const Cart = () => {
     const items = useSelector(selectItems);
     const totalPrice = useSelector(selectTotal);
     const [hasPrime] = useState(Math.random() < 0.5);
+    const totalDiscount = totalPrice > 100 ? (
+        Math.floor(totalPrice - (30 / totalPrice * 100))
+    ) : (
+        Math.abs(Math.floor(totalPrice - (1 / totalPrice * 100)))
+    );
 
     return (
         <Container>
@@ -73,7 +78,7 @@ const Cart = () => {
                                 </PrimeContainer>
                             )}
                             <SubTotal>
-                                Sub-Total: <Currency quantity={totalPrice} currency='EGP' />
+                                Sub-Total: <Currency quantity={totalDiscount} currency='EGP' />
                             </SubTotal>
                             <ItemsNumber>Number of Items: {items.length}</ItemsNumber>
                             <p>This price is exclusive of taxes. GST will be added during checkout.</p>
