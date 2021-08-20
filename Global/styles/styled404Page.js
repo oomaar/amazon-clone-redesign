@@ -1,23 +1,53 @@
 import styled from 'styled-components';
-import { mdScreen, lgScreen, xlScreen, sidebarWidth } from "../GlobalStyle";
+import { mdScreen, sidebarWidth, headerHeight } from "../GlobalStyle";
 
 export const Container = styled.div`
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 5rem 1rem 5rem;
   position: relative;
+  margin-top: calc(${headerHeight} * 2);
+  color: ${({ theme }) => theme.colors.textColor};
+  text-align: center;
   
   @media screen and (min-width: ${mdScreen}px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-left: ${sidebarWidth};
+    margin-top: ${headerHeight};
   }
+`;
 
-  @media screen and (min-width: ${lgScreen}px) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+export const Sorry = styled.p`
+  font-size: 4.5rem;
+  margin: 0;
+
+  @media screen and (min-width: ${mdScreen}px) {
+    font-size: 5rem;
   }
+`;
 
-  @media screen and (min-width: ${xlScreen}px) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+export const Title = styled.p`
+  font-size: 2rem;
+  margin: 0;
+
+  @media screen and (min-width: ${mdScreen}px) {
+    font-size: 2.5rem;
+  }
+`;
+
+export const SubTitle = styled.p`
+  font-size: 2rem;
+
+  @media screen and (min-width: ${mdScreen}px) {
+    font-size: 2.5rem;
+  }
+`;
+
+export const BackButton = styled.a`
+  margin-left: 0.4rem;
+  color: hsl(32, 80%, 74%);
+
+  :hover {
+    text-decoration: underline;
   }
 `;
