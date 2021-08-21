@@ -29,14 +29,22 @@ import {
 } from '../../Global/styles/styledProductPage';
 
 const SingleProduct = ({ product, products }) => {
+    // product variables
+    const id = product.id;
+    const title = product.title;
+    const price = product.price;
+    const description = product.description;
+    const category = product.category;
+    const img = product.image;
+    const discount = price > 100 ? (
+        Math.floor(price - (30 / price * 100))
+    ) : (
+        Math.abs(Math.floor(price - (1 / price * 100)))
+    );
+
     const dispatch = useDispatch();
     const [hasPrime] = useState(Math.random() < 0.5);
-    const productPrice = product.price;
-    const discount = productPrice > 100 ? (
-        Math.floor(productPrice - (30 / productPrice * 100))
-    ) : (
-        Math.abs(Math.floor(productPrice - (1 / productPrice * 100)))
-    );
+
     const randomProductMin = Math.floor(Math.random() * 10) + 1;
     const randomProductMax = Math.floor(Math.random() * 10) + 10;
     const productComponent = products.map(product => (
@@ -51,8 +59,18 @@ const SingleProduct = ({ product, products }) => {
         />
     ));
 
+
     const addItemToCart = () => {
-        dispatch(addToCart(product));
+        const cartProduct = {
+            id,
+            title,
+            price,
+            description,
+            category,
+            img,
+        };
+
+        dispatch(addToCart(cartProduct));
     };
 
     return (
@@ -78,7 +96,7 @@ const SingleProduct = ({ product, products }) => {
                                 <Currency quantity={discount} currency='EGP' />
                             </Discount>
                             <Price>
-                                <Currency quantity={productPrice} currency='EGP' />
+                                <Currency quantity={price} currency='EGP' />
                             </Price>
                         </PriceContainer>
                         {hasPrime && (

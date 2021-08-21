@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Currency from "react-currency-formatter";
 import { MdRemoveShoppingCart } from "react-icons/md";
-import { useDispatch } from "react-redux";
-import { removeFromCart } from "../../Redux/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart, selectItems } from "../../Redux/slices/cartSlice";
 import {
     Container,
     InfoContainer,
@@ -18,7 +18,9 @@ import {
     RemoveIcon,
 } from "./styledCartProduct";
 
-export const CartProduct = ({ item, items }) => {
+export const CartProduct = ({ item }) => {
+    const items = useSelector(selectItems);
+    const id = item.id;
     const dispatch = useDispatch();
     const productPrice = item.price;
     const discount = productPrice > 100 ? (
@@ -28,14 +30,15 @@ export const CartProduct = ({ item, items }) => {
     );
 
     const removeItemFromCart = () => {
-        dispatch(removeFromCart(item.id));
+        // dispatch(removeFromCart({ id }));
+        dispatch(removeFromCart(id));
     };
 
     return (
         <Container>
             <ImageContainer>
                 <Image
-                    src={item.image}
+                    src={item.img}
                     width={200}
                     height={150}
                     objectFit="contain"
