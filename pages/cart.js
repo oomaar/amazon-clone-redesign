@@ -1,3 +1,4 @@
+import { HeadTag } from "../Global/HeadTag";
 import Image from "next/image";
 import Link from "next/link";
 import Currency from "react-currency-formatter";
@@ -35,6 +36,8 @@ const Cart = () => {
 
     return (
         <Container>
+            <HeadTag title="Your Cart" />
+
             <h2>Your Cart</h2>
 
             {items.length === 0 ? (
