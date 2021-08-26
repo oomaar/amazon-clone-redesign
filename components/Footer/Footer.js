@@ -55,21 +55,12 @@ export const Footer = () => {
                 </FooterSubContainer>
                 <CopyContainer>
                     <div>
-                        {darkValue === 'light' ? (
-                            <Image
-                                src="/logo-single-black.png"
-                                width={50}
-                                height={50}
-                                objectFit="contain"
-                            />
-                        ) : (
-                            <Image
-                                src="/logo-single-white.png"
-                                width={50}
-                                height={50}
-                                objectFit="contain"
-                            />
-                        )}
+                        <Image
+                            src={`${darkValue === 'light' ? "/logo-single-black.png" : "/logo-single-white.png"}`}
+                            width={50}
+                            height={50}
+                            objectFit="contain"
+                        />
                     </div>
                     <FooterCopy>
                         Amazon Clone | Powered by NextJS | Developed & Re-Designed by <span>Omar Hassan</span>
