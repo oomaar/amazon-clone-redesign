@@ -50,6 +50,8 @@ export const lightTheme = {
     shadowColor: `${shadowLight}`,
     scrollBarColor: `hsl(${hueColor}, 12%, 90%)`,
     scrollThumbColor: `hsl(${hueColor}, 12%, 80%)`,
+    greenContainerColor: `hsl(111, 19%, 71%)`,
+    greenContainerBg: `hsl(108, 16%, 91%)`
   },
 };
 
@@ -69,6 +71,8 @@ export const darkTheme = {
     shadowColor: `${shadowDark}`,
     scrollBarColor: `hsl(${hueColor}, 12%, 48%)`,
     scrollThumbColor: `hsl(${hueColor}, 12%, 36%)`,
+    greenContainerColor: `hsl(111, 19%, 50%)`,
+    greenContainerBg: `hsl(108, 16%, 21%)`
   },
 };
 
@@ -106,19 +110,19 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 100%;
   }
 
-    // Scroll Bar
-    ::-webkit-scrollbar {
-      width: 0.6rem;
-      background-color: ${({ theme }) => theme.colors.scrollBarColor};
-      border-radius: 0.5rem;
-    }
+  // Scroll Bar
+  ::-webkit-scrollbar {
+    width: 0.6rem;
+    background-color: ${({ theme }) => theme.colors.scrollBarColor};
+    border-radius: 0.5rem;
+  }
   
-    ::-webkit-scrollbar-thumb {
-      background-color: ${({ theme }) => theme.colors.scrollThumbColor};
-      border-radius: 0.5rem;
-    }
+  ::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.scrollThumbColor};
+    border-radius: 0.5rem;
+  }
   
-    ::-webkit-scrollbar-thumb:hover {
-      background-color: ${({ theme }) => theme.colors.textColorLight};
-    }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: ${({ theme }) => theme.colors.textColorLight};
+  }
 `;
