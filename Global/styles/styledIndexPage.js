@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { mdScreen, xlScreen } from "../GlobalStyle";
 
-export const Application = styled.div``;
-
 export const Main = styled.main`
   max-width: 1024px;
 

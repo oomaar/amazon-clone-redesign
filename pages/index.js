@@ -1,18 +1,18 @@
 import { Banner, ProductFeed } from "../components";
 import { HeadTag } from '../Global/HeadTag';
-import { Application, Main } from "../Global/styles/styledIndexPage";
+import { Main } from "../Global/styles/styledIndexPage";
 import amazonData from "../data/amazonData.json";
 
 export default function Home({ products }) {
   return (
-    <Application>
+    <div>
       <HeadTag title="Amazon-Clone | Modern Amazon" />
 
       <Main>
         <Banner />
         <ProductFeed products={products} data={amazonData.productsFeed} />
       </Main>
-    </Application>
+    </div>
   );
 };
 
