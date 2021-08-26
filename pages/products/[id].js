@@ -29,36 +29,20 @@ import {
 } from '../../Global/styles/styledProductPage';
 
 const SingleProduct = ({ product, products }) => {
-    // product variables
+    const [bookmark, setBookmark] = useState(false);
     const id = product.id;
     const title = product.title;
     const price = product.price;
     const description = product.description;
     const category = product.category;
     const img = product.image;
+    const dispatch = useDispatch();
+    const [hasPrime] = useState(Math.random() < 0.5);
     const discount = price > 100 ? (
         Math.floor(price - (30 / price * 100))
     ) : (
         Math.abs(Math.floor(price - (1 / price * 100)))
     );
-
-    const dispatch = useDispatch();
-    const [hasPrime] = useState(Math.random() < 0.5);
-
-    const randomProductMin = Math.floor(Math.random() * 10) + 1;
-    const randomProductMax = Math.floor(Math.random() * 10) + 10;
-    const productComponent = products.map(product => (
-        <Product
-            key={product.id}
-            id={product.id}
-            title={product.title}
-            price={product.price}
-            description={product.description}
-            category={product.category}
-            image={product.image}
-        />
-    ));
-
 
     const addItemToCart = () => {
         const cartProduct = {
@@ -72,6 +56,20 @@ const SingleProduct = ({ product, products }) => {
 
         dispatch(addToCart(cartProduct));
     };
+
+    const productComponent = products.map(product => (
+        product.category === category && product.id !== id && (
+            <Product
+                key={product.id}
+                id={product.id}
+                title={product.title}
+                price={product.price}
+                description={product.description}
+                category={product.category}
+                image={product.image}
+            />
+        )
+    ));
 
     return (
         <div>
@@ -118,9 +116,8 @@ const SingleProduct = ({ product, products }) => {
                                 <span>Add to Cart</span>
                             </AddButton>
                             <BookMark>
-                                <BookIcon>
-                                    <BsBookmark />
-                                    {/* <BsBookmarkFill /> */}
+                                <BookIcon onClick={() => setBookmark(state => !state)}>
+                                    {bookmark ? <BsBookmarkFill /> : <BsBookmark />}
                                 </BookIcon>
                             </BookMark>
                         </ButtonContainer>
@@ -130,7 +127,7 @@ const SingleProduct = ({ product, products }) => {
                 <div>
                     <h3>You Might also Like</h3>
                     <LikeProduct>
-                        {productComponent.slice(randomProductMin, randomProductMax)}
+                        {productComponent}
                     </LikeProduct>
                 </div>
             </Container>
