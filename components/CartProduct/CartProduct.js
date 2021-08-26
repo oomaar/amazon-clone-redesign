@@ -30,7 +30,6 @@ export const CartProduct = ({ item }) => {
     );
 
     const removeItemFromCart = () => {
-        // dispatch(removeFromCart({ id }));
         dispatch(removeFromCart(id));
     };
 

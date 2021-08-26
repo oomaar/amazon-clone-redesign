@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lgScreen } from '../../Global/GlobalStyle';
+import { lgScreen, mdScreen } from '../../Global/GlobalStyle';
 
 export const Container = styled.div`
   display: flex;
@@ -53,7 +53,7 @@ export const Discount = styled.p`
 
 export const Price = styled.p`
   font-size: 0.8rem;
-  color: #f00;
+  color: #7D1935;
   text-decoration: line-through;
   margin-left: 0.5rem;
   font-weight: ${({ theme }) => theme.typography.fontWeight.SemiBold};
@@ -73,25 +73,39 @@ export const ButtonsContainer = styled.div`
   p {
     color: ${({ theme }) => theme.colors.titleColor};
     margin: 0 0.5rem;
+    font-size: 1rem;
+
+    @media screen and (min-width: ${mdScreen}px) {
+      font-size: 1.1rem;
+    }
   }
 `;
 
 export const QuantityBtn = styled.button`
   outline: 0;
   border: 0;
-  background-color: ${({ theme }) => theme.colors.containerColor};
-  padding: 0.4rem;
+  background-color: ${({ theme }) => theme.colors.inputColor};
+  color: ${({ theme }) => theme.colors.textColor};
+  padding: 0.3rem;
   border-radius: 5px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   cursor: pointer;
+
+  @media screen and (min-width: ${mdScreen}px) {
+    padding: 0.4rem;
+  }
 `;
 
 export const RemoveIcon = styled.div`
   color: #fff;
   background-color: #f00;
   padding: 0.2rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-left: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
+
+  @media screen and (min-width: ${mdScreen}px) {
+    padding: 0.4rem;
+  }
 `;
