@@ -101,7 +101,7 @@ export const Stars = styled.div`
   display: flex;
   align-items: center;
 
-  .yellowColor {
+  span {
     color: hsl(39, 69%, 50%);
   }
 `;

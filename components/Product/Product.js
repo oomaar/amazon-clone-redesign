@@ -21,7 +21,6 @@ import {
 
 export const Product = ({
     id,
-    // title,
     price,
     description,
     category,
@@ -47,13 +46,13 @@ export const Product = ({
                     height={300}
                     objectFit="contain"
                 />
-                <ViewContainer>
-                    <Link href={`/products/${id}`}>
+                <Link href={`/products/${id}`}>
+                    <ViewContainer>
                         <ViewLink>
                             View Product
                         </ViewLink>
-                    </Link>
-                </ViewContainer>
+                    </ViewContainer>
+                </Link>
             </ImageContainer>
             <ContentBox>
                 <ProductCategory>{category}</ProductCategory>
@@ -68,7 +67,7 @@ export const Product = ({
                         </Price>
                     </PriceContainer>
                     <Stars>
-                        {rating} <AiFillStar className="yellowColor" />
+                        {rating} <span><AiFillStar /></span>
                     </Stars>
                 </SubContainer>
                 {hasPrime && (
