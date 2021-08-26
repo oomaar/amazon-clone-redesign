@@ -17,7 +17,7 @@ export const Banner = () => {
                 showThumbs={false}
             >
                 <div>
-                    <img src="/banner/1.jpg" />
+                    <img src="/banner/5.jpg" />
                 </div>
                 <div>
                     <img src="/banner/2.jpg" />
@@ -29,10 +29,10 @@ export const Banner = () => {
                     <img src="/banner/4.jpg" />
                 </div>
                 <div>
-                    <img src="/banner/5.jpg" />
+                    <img src="/banner/6.jpg" />
                 </div>
                 <div>
-                    <img src="/banner/6.jpg" />
+                    <img src="/banner/1.jpg" />
                 </div>
             </Carousel>
         </Container>

@@ -30,7 +30,7 @@ export const Container = styled.div`
 }
 
 .carousel .control-arrow, .carousel.carousel-slider .control-arrow{
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .carousel .control-prev.control-arrow:hover,
@@ -40,7 +40,7 @@ export const Container = styled.div`
 
 .carousel .control-next.control-arrow:before {
   content: '';
-  border: solid ${({ theme }) => theme.colors.textColor};
+  border: solid #000;
   border-width: 0 8px 8px 0;
   display: inline-block;
   padding: 10px;
@@ -50,7 +50,7 @@ export const Container = styled.div`
 
 .carousel .control-prev.control-arrow:before {
   content: '';
-  border: solid ${({ theme }) => theme.colors.textColor};
+  border: solid #000;
   border-width: 0 8px 8px 0;
   display: inline-block;
   padding: 10px;
