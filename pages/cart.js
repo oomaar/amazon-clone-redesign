@@ -1,12 +1,12 @@
-import { HeadTag } from "../Global/HeadTag";
 import Image from "next/image";
 import Link from "next/link";
 import Currency from "react-currency-formatter";
 import { useSelector } from "react-redux";
-import { selectItems, selectTotal } from "../Redux/slices/cartSlice";
 import { BsCheckAll } from "react-icons/bs";
 import { CartProduct } from "../components";
 import { useState } from "react";
+import { HeadTag } from "../Global/HeadTag";
+import { selectItems, selectTotal } from "../Redux/slices/cartSlice";
 import {
     Container,
     SubContainer,
@@ -39,7 +39,6 @@ const Cart = () => {
             <HeadTag title="Your Cart" />
 
             <h2>Your Cart</h2>
-
             {items.length === 0 ? (
                 <SubContainer>
                     <ImageContainer>
@@ -52,7 +51,10 @@ const Cart = () => {
                     </ImageContainer>
                     <InfoContainer>
                         <Title>Your cart is empty !</Title>
-                        <p>Your cart lives to serve. Give it purpose - fill it with clothes, Electronics, Jewelery, etc. and it will be happy to serve you.</p>
+                        <p>
+                            Your cart lives to serve. Give it purpose - fill it with clothes, Electronics,
+                            Jewelery, etc. and it will be happy to serve you.
+                        </p>
                         <Link href="/">
                             <InfoButton>
                                 Continue Shopping
@@ -64,7 +66,7 @@ const Cart = () => {
                 <SubBox>
                     <CartProductContainer >
                         {items.map((item, i) => (
-                            <CartProduct key={i} item={item} items={items} />
+                            <CartProduct key={i} item={item} />
                         ))}
                     </CartProductContainer>
                     <SubInfo>

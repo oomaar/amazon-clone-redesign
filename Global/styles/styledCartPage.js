@@ -45,7 +45,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const InfoContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.containerColor};
+  background-color: ${({ theme }) => theme.colors.inputColor};
   padding: 1.5rem;
   border-radius: 0.5rem;
 
@@ -114,6 +114,7 @@ export const ItemInfoContainer = styled.div`
   box-shadow: ${({ theme }) => theme.colors.shadowColor};
   padding: 1.5rem;
   border-radius: 0.5rem;
+  background-color: ${({ theme }) => theme.colors.inputColor};
   
   p {
     color: ${({ theme }) => theme.colors.textColorLight};
@@ -134,14 +135,14 @@ export const ItemsNumber = styled.h3`
 export const PrimeContainer = styled.div`
   display: flex;
   align-items: center;
-  background-color: hsl(108, 16%, 91%);
-  color: hsl(111, 19%, 71%);
+  background-color: ${({ theme }) => theme.colors.greenContainerBg};
+  color: ${({ theme }) => theme.colors.greenContainerColor};
   font-size: ${({ theme }) => theme.typography.smallFontSize};
   padding: 0 0.5rem;
   border-radius: 5px;
-
+  
   p {
-    color: hsl(111, 19%, 71%);
+    color: ${({ theme }) => theme.colors.greenContainerColor};
   }
 `;
 
