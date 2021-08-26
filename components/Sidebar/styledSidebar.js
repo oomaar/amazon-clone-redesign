@@ -13,10 +13,6 @@ export const Nav = styled.nav`
   width: 100%;
   height: ${headerHeight};
   z-index: 100;
-
-  .user__icon {
-    display: none;
-  }
   
   @media screen and (min-width: ${mdScreen}px) {
     top: 0;
@@ -25,10 +21,6 @@ export const Nav = styled.nav`
     height: 100vh;
     flex-direction: column;
     padding: 2rem;
-
-    .user__icon {
-      display: block;
-    }
   }
 `;
 
@@ -46,8 +38,7 @@ export const Icons = styled.ul`
   justify-content: space-around;
   align-items: center;
   padding: 0;
-  width: 100%;
-  color: ${({ theme }) => theme.colors.containerColorSecond};
+  width: 80%;
 
   .cart__icon {
     position: relative;

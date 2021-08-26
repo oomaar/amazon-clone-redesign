@@ -1,10 +1,9 @@
-import { RiShoppingCart2Line } from "react-icons/ri";
-import { AiOutlineHome } from "react-icons/ai";
-import { BsBookmarksFill, BsBookmarks, BsClockHistory } from "react-icons/bs";
-import { HiOutlineUserCircle } from "react-icons/hi";
-import { AiFillHome } from "react-icons/ai";
-import { IoMdCart } from "react-icons/io";
 import Image from "next/image";
+import { useState } from "react";
+import { AiFillHome, AiOutlineHome, AiFillClockCircle, AiOutlineClockCircle } from "react-icons/ai";
+import { HiOutlineShoppingCart, HiShoppingCart } from "react-icons/hi";
+import { RiSettings5Line, RiSettings4Fill } from "react-icons/ri";
+import { BsBookmarksFill, BsBookmarks } from "react-icons/bs";
 import { useRouter } from "next/dist/client/router";
 import { useSelector } from "react-redux";
 import { selectDark } from "../../Redux/slices/darkSlice";
@@ -21,27 +20,19 @@ export const Sidebar = () => {
     const router = useRouter();
     const darkValue = useSelector(selectDark);
     const items = useSelector(selectItems);
+    const [settings, setSettings] = useState(false);
 
     return (
         <Nav>
             <Logo onClick={() => router.push('/')}>
-                {darkValue === 'light' ? (
-                    <Image
-                        src="/logo-single-black.png"
-                        width={100}
-                        height={100}
-                        objectFit="contain"
-                    />
-                ) : (
-                    <Image
-                        src="/logo-single-white.png"
-                        width={100}
-                        height={100}
-                        objectFit="contain"
-                    />
-                )}
+                <Image
+                    src={`${darkValue === 'light' ? "/logo-single-black.png" : "/logo-single-white.png"}`}
+                    width={100}
+                    height={100}
+                    objectFit="contain"
+                />
             </Logo>
-            <Icons darkValue={darkValue}>
+            <Icons>
                 <li>
                     <Icon onClick={() => router.push('/')}>
                         {router.route === '/' ? <AiFillHome /> : <AiOutlineHome />}
@@ -49,9 +40,7 @@ export const Sidebar = () => {
                 </li>
                 <li>
                     <Icon className="cart__icon" onClick={() => router.push('/cart')}>
-                        {/* <RiShoppingCart2Line /> */}
-                        {/* <IoMdCart /> */}
-                        {router.route === '/cart' ? <IoMdCart /> : <RiShoppingCart2Line />}
+                        {router.route === '/cart' ? <HiShoppingCart /> : <HiOutlineShoppingCart />}
                         <CartCount>
                             <p>{items.length}</p>
                         </CartCount>
@@ -59,19 +48,17 @@ export const Sidebar = () => {
                 </li>
                 <li>
                     <Icon>
-                        {/* <BsBookmarksFill /> */}
-                        <BsBookmarks />
+                        {router.route === '/bookmark' ? <BsBookmarksFill /> : <BsBookmarks />}
                     </Icon>
                 </li>
                 <li>
                     <Icon>
-                        <BsClockHistory />
-                        {/* <BsFillClockFill /> */}
+                        {router.route === '/checkout' ? <AiFillClockCircle /> : <AiOutlineClockCircle />}
                     </Icon>
                 </li>
             </Icons>
-            <Icon className="user__icon">
-                <HiOutlineUserCircle />
+            <Icon onClick={() => setSettings(state => !state)}>
+                {settings ? <RiSettings4Fill /> : <RiSettings5Line />}
             </Icon>
         </Nav>
     );
