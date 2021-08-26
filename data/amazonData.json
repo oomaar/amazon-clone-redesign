@@ -1,0 +1,29 @@
+{
+  "productsFeed": [
+    {
+      "id": 1,
+      "category": "all",
+      "title": "All"
+    },
+    {
+      "id": 2,
+      "category": "electronics",
+      "title": "Electronics"
+    },
+    {
+      "id": 3,
+      "category": "men's clothing",
+      "title": "Men's Clothing"
+    },
+    {
+      "id": 4,
+      "category": "women's clothing",
+      "title": "Women's Clothing"
+    },
+    {
+      "id": 5,
+      "category": "jewelery",
+      "title": "Jewelery"
+    }
+  ]
+}

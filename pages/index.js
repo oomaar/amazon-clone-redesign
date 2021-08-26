@@ -1,6 +1,7 @@
 import { Banner, ProductFeed } from "../components";
 import { HeadTag } from '../Global/HeadTag';
 import { Application, Main } from "../Global/styles/styledIndexPage";
+import amazonData from "../data/amazonData.json";
 
 export default function Home({ products }) {
   return (
@@ -9,7 +10,7 @@ export default function Home({ products }) {
 
       <Main>
         <Banner />
-        <ProductFeed products={products} />
+        <ProductFeed products={products} data={amazonData.productsFeed} />
       </Main>
     </Application>
   );
