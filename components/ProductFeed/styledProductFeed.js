@@ -22,7 +22,7 @@ export const Container = styled.div`
 `;
 
 export const Nav = styled.nav`
-  padding: 1rem 0.5rem 0.5rem;
+  padding: 1rem 0.5rem 0.7rem;
   position: fixed;
   background-color: ${({ theme }) => theme.colors.bodyColor};
   z-index: 90;
@@ -58,17 +58,13 @@ export const List = styled.ul`
   }
 `;
 
-export const NavIcons = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
 export const NavIcon = styled.div`
   display: flex;
   cursor: pointer;
   width: 10%;
   color: ${({ theme }) => theme.colors.firstColor};
   font-size: 1.4rem;
+  margin-left: auto;
 
   @media screen and (min-width: ${mdScreen}px) {
     display: none;
