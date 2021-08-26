@@ -14,7 +14,7 @@ export const Nav = styled.nav`
   box-shadow: none;
   z-index: 100;
   padding: 0.5rem 0;
-  
+
   @media (min-width: ${mdScreen}px) {
     flex-direction: row;
     padding: 0.2rem 1rem;
@@ -27,7 +27,7 @@ export const Nav = styled.nav`
 export const Subcontainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
   padding-right: 1rem;
 
@@ -66,10 +66,15 @@ export const SearchContainer = styled.div`
   }
 `;
 
+export const Icons = styled.div`
+  display: felx;
+  column-gap: 1rem;
+`;
+
 export const Icon = styled.div`
   font-size: 1.4rem;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.firstColorAlt};
+  color: ${({ theme }) => theme.colors.containerColorSecond};
   display: flex;
   justify-content: center;
 `;
@@ -96,22 +101,13 @@ export const Input = styled.input`
 
 export const Logo = styled.div`
   width: 150px;
+  height: 50px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 
   @media (min-width: ${mdScreen}px) {
-    width: 200px;
-  }
-`;
-
-export const ThemeIcon = styled.div`
-  font-size: 1.4rem;
-  cursor: pointer;
-  color: ${({ theme }) => theme.colors.firstColor};
-  display: none;
-  justify-content: center;
-  margin: 0 1rem;
-
-  @media (min-width:${mdScreen}px) {
-    display: flex;
+    height: 100px;
   }
 `;

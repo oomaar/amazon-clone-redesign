@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { FiSearch } from "react-icons/fi";
 import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
-import { BiSun, BiMoon } from "react-icons/bi";
+import { useEffect } from "react";
+import { BiSun, BiMoon, BiSearch } from "react-icons/bi";
+import { HiOutlineUserCircle } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { selectDark, setDarkMode } from "../../Redux/slices/darkSlice";
 import {
@@ -12,7 +12,7 @@ import {
     InputContainer,
     Input,
     Subcontainer,
-    ThemeIcon,
+    Icons,
     Logo,
 } from "./styledSearchBar";
 
@@ -58,41 +58,35 @@ export const SearchBar = () => {
 
     return (
         <Nav>
-            <ThemeIcon>
-                {darkValue === 'light' ? (
-                    <BiMoon onClick={handleDark} />
-                ) : (
-                    <BiSun onClick={handleLight} />
-                )}
-            </ThemeIcon>
             <SearchContainer>
                 <Icon>
-                    <FiSearch />
+                    <BiSearch />
                 </Icon>
                 <InputContainer>
                     <Input />
                 </InputContainer>
             </SearchContainer>
             <Subcontainer>
-                <Logo>
-                    {darkValue === 'light' ? (
-                        <Image
-                            onClick={() => router.push('/')}
-                            src="/logo-black.png"
-                            width={300}
-                            height={100}
-                            objectFit="contain"
-                        />
-                    ) : (
-                        <Image
-                            onClick={() => router.push('/')}
-                            src="/logo-white.png"
-                            width={300}
-                            height={100}
-                            objectFit="contain"
-                        />
-                    )}
+                <Logo onClick={() => router.push('/')}>
+                    <Image
+                        src={`${darkValue === 'light' ? "/logo-black.png" : "/logo-white.png"}`}
+                        width={200}
+                        height={200}
+                        objectFit="contain"
+                    />
                 </Logo>
+                <Icons>
+                    <Icon>
+                        {darkValue === 'light' ? (
+                            <BiMoon onClick={handleDark} />
+                        ) : (
+                            <BiSun onClick={handleLight} />
+                        )}
+                    </Icon>
+                    <Icon>
+                        <HiOutlineUserCircle />
+                    </Icon>
+                </Icons>
             </Subcontainer>
         </Nav>
     );
