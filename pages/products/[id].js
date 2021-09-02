@@ -7,7 +7,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { Product } from "../../components";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../Redux/slices/cartSlice";
+// import { addToCart } from "../../Redux/slices/cartSlice";
 import {
     Container,
     ProductContainer,
@@ -45,16 +45,16 @@ const SingleProduct = ({ product, products }) => {
     );
 
     const addItemToCart = () => {
-        const cartProduct = {
-            id,
-            title,
-            price,
-            description,
-            category,
-            img,
-        };
+        // const cartProduct = {
+        //     id,
+        //     title,
+        //     price,
+        //     description,
+        //     category,
+        //     img,
+        // };
 
-        dispatch(addToCart(cartProduct));
+        // dispatch(addToCart(cartProduct));
     };
 
     const productComponent = products.map(product => (

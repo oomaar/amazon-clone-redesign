@@ -6,7 +6,7 @@ import { BsCheckAll } from "react-icons/bs";
 import { CartProduct } from "../components";
 import { useState } from "react";
 import { HeadTag } from "../Global/HeadTag";
-import { selectItems, selectTotal } from "../Redux/slices/cartSlice";
+// import { selectItems, selectTotal } from "../Redux/slices/cartSlice";
 import {
     Container,
     SubContainer,
@@ -26,13 +26,14 @@ import {
 
 const Cart = () => {
     const items = useSelector(selectItems);
-    const totalPrice = useSelector(selectTotal);
+    // const totalPrice = useSelector(selectTotal);
+    const price = 12;
     const [hasPrime] = useState(Math.random() < 0.5);
-    const totalDiscount = totalPrice > 100 ? (
-        Math.floor(totalPrice - (30 / totalPrice * 100))
-    ) : (
-        Math.abs(Math.floor(totalPrice - (1 / totalPrice * 100)))
-    );
+    // const totalDiscount = totalPrice > 100 ? (
+    //     Math.floor(totalPrice - (30 / totalPrice * 100))
+    // ) : (
+    //     Math.abs(Math.floor(totalPrice - (1 / totalPrice * 100)))
+    // );
 
     return (
         <Container>
@@ -83,9 +84,10 @@ const Cart = () => {
                                 </PrimeContainer>
                             )}
                             <SubTotal>
-                                Sub-Total: <Currency quantity={totalDiscount} currency='EGP' />
+                                Sub-Total: <Currency quantity={price} currency='EGP' />
                             </SubTotal>
-                            <ItemsNumber>Number of Items: {items.length}</ItemsNumber>
+                            {/* <ItemsNumber>Number of Items: {items.length}</ItemsNumber> */}
+                            <ItemsNumber>Number of Items: items.length</ItemsNumber>
                             <p>This price is exclusive of taxes. GST will be added during checkout.</p>
                             <InfoButton>Proceed to Payment</InfoButton>
                         </ItemInfoContainer>

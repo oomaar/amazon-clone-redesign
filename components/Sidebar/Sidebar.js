@@ -7,7 +7,7 @@ import { BsBookmarksFill, BsBookmarks } from "react-icons/bs";
 import { useRouter } from "next/dist/client/router";
 import { useSelector } from "react-redux";
 import { selectDark } from "../../Redux/slices/darkSlice";
-import { selectItems } from "../../Redux/slices/cartSlice";
+// import { selectItems } from "../../Redux/slices/cartSlice";
 import {
     Nav,
     Logo,
@@ -19,7 +19,7 @@ import {
 export const Sidebar = () => {
     const router = useRouter();
     const darkValue = useSelector(selectDark);
-    const items = useSelector(selectItems);
+    // const items = useSelector(selectItems);
     const [settings, setSettings] = useState(false);
 
     return (
@@ -42,7 +42,8 @@ export const Sidebar = () => {
                     <Icon className="cart__icon" onClick={() => router.push('/cart')}>
                         {router.route === '/cart' ? <HiShoppingCart /> : <HiOutlineShoppingCart />}
                         <CartCount>
-                            <p>{items.length}</p>
+                            {/* <p>{items.length}</p> */}
+                            <p>h</p>
                         </CartCount>
                     </Icon>
                 </li>
