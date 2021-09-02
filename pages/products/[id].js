@@ -7,7 +7,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { Product } from "../../components";
 import { useDispatch } from "react-redux";
-// import { addToCart } from "../../Redux/slices/cartSlice";
+import { addToCart } from "../../Redux/slices/cartSlice";
 import {
     Container,
     ProductContainer,
@@ -44,18 +44,16 @@ const SingleProduct = ({ product, products }) => {
         Math.abs(Math.floor(price - (1 / price * 100)))
     );
 
-    const addItemToCart = () => {
-        // const cartProduct = {
-        //     id,
-        //     title,
-        //     price,
-        //     description,
-        //     category,
-        //     img,
-        // };
-
-        // dispatch(addToCart(cartProduct));
+    const cartProduct = {
+        id,
+        title,
+        price,
+        description,
+        category,
+        img,
     };
+
+    const addItemToCart = item => dispatch(addToCart(item));
 
     const productComponent = products.map(product => (
         product.category === category && product.id !== id && (
@@ -111,7 +109,7 @@ const SingleProduct = ({ product, products }) => {
                             </PrimeContainer>
                         )}
                         <ButtonContainer>
-                            <AddButton onClick={addItemToCart}>
+                            <AddButton onClick={() => addItemToCart(cartProduct)}>
                                 <MdAddShoppingCart />
                                 <span>Add to Cart</span>
                             </AddButton>

@@ -6,7 +6,7 @@ import { BsCheckAll } from "react-icons/bs";
 import { CartProduct } from "../components";
 import { useState } from "react";
 import { HeadTag } from "../Global/HeadTag";
-// import { selectItems, selectTotal } from "../Redux/slices/cartSlice";
+import { selectItems } from "../Redux/slices/cartSlice";
 import {
     Container,
     SubContainer,
