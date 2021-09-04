@@ -2,7 +2,7 @@ import Image from "next/image";
 import Currency from "react-currency-formatter";
 import { MdRemoveShoppingCart } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../../Redux/slices/cartSlice";
+import { addToCart, decreaseCart, removeFromCart } from "../../Redux/slices/cartSlice";
 // import { removeFromCart, selectItems } from "../../Redux/slices/cartSlice";
 import {
     Container,
@@ -48,6 +48,7 @@ export const CartProduct = ({ item }) => {
 
     const handleRemoveFromCart = product => dispatch(removeFromCart(product));
     const handleAddToCart = product => dispatch(addToCart(product));
+    const handleDecreaseCart = product => dispatch(decreaseCart(product));
 
     return (
         <Container>
@@ -72,7 +73,7 @@ export const CartProduct = ({ item }) => {
                     </PriceContainer>
                     <QuantityBox>
                         <ButtonsContainer>
-                            <QuantityBtn>-</QuantityBtn>
+                            <QuantityBtn onClick={() => handleDecreaseCart(cartProduct)}>-</QuantityBtn>
                             {/* <p>{items.length}</p> */}
                             <p>h</p>
                             <QuantityBtn onClick={() => handleAddToCart(cartProduct)}>+</QuantityBtn>
