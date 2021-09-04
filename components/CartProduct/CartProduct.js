@@ -2,6 +2,7 @@ import Image from "next/image";
 import Currency from "react-currency-formatter";
 import { MdRemoveShoppingCart } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../../Redux/slices/cartSlice";
 // import { removeFromCart, selectItems } from "../../Redux/slices/cartSlice";
 import {
     Container,
@@ -20,7 +21,23 @@ import {
 
 export const CartProduct = ({ item }) => {
     // const items = useSelector(selectItems);
+
     const id = item.id;
+    const title = item.title;
+    const price = item.price;
+    const description = item.description;
+    const category = item.category;
+    const img = item.image;
+
+    const cartProduct = {
+        id,
+        title,
+        price,
+        description,
+        category,
+        img,
+    };
+
     const dispatch = useDispatch();
     const productPrice = item.price;
     const discount = productPrice > 100 ? (
@@ -29,9 +46,8 @@ export const CartProduct = ({ item }) => {
         Math.abs(Math.floor(productPrice - (1 / productPrice * 100)))
     );
 
-    const removeItemFromCart = () => {
-        // dispatch(removeFromCart(id));
-    };
+    const handleRemoveFromCart = product => dispatch(removeFromCart(product));
+    const handleAddToCart = product => dispatch(addToCart(product));
 
     return (
         <Container>
@@ -59,9 +75,9 @@ export const CartProduct = ({ item }) => {
                             <QuantityBtn>-</QuantityBtn>
                             {/* <p>{items.length}</p> */}
                             <p>h</p>
-                            <QuantityBtn>+</QuantityBtn>
+                            <QuantityBtn onClick={() => handleAddToCart(cartProduct)}>+</QuantityBtn>
                         </ButtonsContainer>
-                        <RemoveIcon onClick={removeItemFromCart}>
+                        <RemoveIcon onClick={() => handleRemoveFromCart(cartProduct)}>
                             <MdRemoveShoppingCart />
                         </RemoveIcon>
                     </QuantityBox>
