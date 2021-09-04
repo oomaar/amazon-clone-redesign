@@ -54,6 +54,7 @@ export const Discount = styled.p`
 export const Price = styled.p`
   font-size: 0.8rem;
   color: #7D1935;
+  color: #f00;
   text-decoration: line-through;
   margin-left: 0.5rem;
   font-weight: ${({ theme }) => theme.typography.fontWeight.SemiBold};
