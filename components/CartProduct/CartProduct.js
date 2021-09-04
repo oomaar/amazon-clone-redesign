@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Currency from "react-currency-formatter";
 import { MdRemoveShoppingCart } from "react-icons/md";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart, decreaseCart, removeFromCart } from "../../Redux/slices/cartSlice";
-// import { removeFromCart, selectItems } from "../../Redux/slices/cartSlice";
 import {
     Container,
     InfoContainer,
@@ -20,14 +19,20 @@ import {
 } from "./styledCartProduct";
 
 export const CartProduct = ({ item }) => {
-    // const items = useSelector(selectItems);
-
+    const dispatch = useDispatch();
     const id = item.id;
     const title = item.title;
     const price = item.price;
     const description = item.description;
     const category = item.category;
     const img = item.image;
+    const quantity = item.cartQuantity;
+    const productPrice = price * quantity;
+    const discount = productPrice > 100 ? (
+        Math.floor(productPrice - (30 / productPrice * 100))
+    ) : (
+        Math.abs(Math.floor(productPrice - (1 / productPrice * 100)))
+    );
 
     const cartProduct = {
         id,
@@ -37,14 +42,6 @@ export const CartProduct = ({ item }) => {
         category,
         img,
     };
-
-    const dispatch = useDispatch();
-    const productPrice = item.price;
-    const discount = productPrice > 100 ? (
-        Math.floor(productPrice - (30 / productPrice * 100))
-    ) : (
-        Math.abs(Math.floor(productPrice - (1 / productPrice * 100)))
-    );
 
     const handleRemoveFromCart = product => dispatch(removeFromCart(product));
     const handleAddToCart = product => dispatch(addToCart(product));
@@ -74,8 +71,7 @@ export const CartProduct = ({ item }) => {
                     <QuantityBox>
                         <ButtonsContainer>
                             <QuantityBtn onClick={() => handleDecreaseCart(cartProduct)}>-</QuantityBtn>
-                            {/* <p>{items.length}</p> */}
-                            <p>h</p>
+                            <p>{quantity}</p>
                             <QuantityBtn onClick={() => handleAddToCart(cartProduct)}>+</QuantityBtn>
                         </ButtonsContainer>
                         <RemoveIcon onClick={() => handleRemoveFromCart(cartProduct)}>
