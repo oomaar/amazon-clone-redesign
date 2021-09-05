@@ -51,7 +51,7 @@ export const lightTheme = {
     scrollBarColor: `hsl(${hueColor}, 12%, 90%)`,
     scrollThumbColor: `hsl(${hueColor}, 12%, 80%)`,
     greenContainerColor: `hsl(111, 19%, 71%)`,
-    greenContainerBg: `hsl(108, 16%, 91%)`
+    greenContainerBg: `hsl(108, 16%, 92%)`
   },
 };
 
