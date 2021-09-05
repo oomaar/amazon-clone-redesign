@@ -23,50 +23,33 @@ const cartSlice = createSlice({
             };
         },
         removeFromCart: (state, action) => {
-            const index = state.cartItems.findIndex(cartItem => cartItem.id === action.payload.id);
-            let newCart = [...state.cartItems];
-
-            if (index <= 0) {
-                // The item exists in the cart, remove it
-                newCart.splice(index, 1);
-                state.cartItems = newCart;
-            } else {
-                console.warn(
-                    `Cant remove product (id: ${action.payload.id}) as it's not in the cart`
-                );
-            };
-
-            return state;
-        },
-        decreaseCart: (state, action) => {
             state.cartItems.map((cartItem) => {
                 if (cartItem.id === action.payload.id) {
-                    if (cartItem.cartQuantity > 1) {
-                        cartItem = {
-                            ...cartItem,
-                            cartQuantity: cartItem.cartQuantity - 1,
-                        };
+                    const nextCartItems = state.cartItems.filter(
+                        (item) => item.id !== cartItem.id
+                    );
 
-                        const index = state.cartItems.findIndex(cartItem => cartItem.id === action.payload.id);
-                        state.cartItems[index] = cartItem;
-
-                    } else if (cartItem.cartQuantity === 1) {
-                        const index = state.cartItems.findIndex(cartItem => cartItem.id === action.payload.id);
-                        let newCart = [...state.cartItems];
-
-                        if (index <= 0) {
-                            newCart.splice(index, 1);
-                            state.cartItems = newCart;
-                        } else {
-                            console.warn(
-                                `Cant remove product (id: ${action.payload.id}) as it's not in the cart`
-                            );
-                        };
-                    };
+                    state.cartItems = nextCartItems;
                 };
 
                 return state;
             });
+        },
+        decreaseCart: (state, action) => {
+            const itemIndex = state.cartItems.findIndex(
+                (item) => item.id === action.payload.id
+            );
+
+            if (state.cartItems[itemIndex].cartQuantity > 1) {
+                state.cartItems[itemIndex].cartQuantity -= 1;
+
+            } else if (state.cartItems[itemIndex].cartQuantity === 1) {
+                const nextCartItems = state.cartItems.filter(
+                    (item) => item.id !== action.payload.id
+                );
+
+                state.cartItems = nextCartItems;
+            };
         },
     }
 });
