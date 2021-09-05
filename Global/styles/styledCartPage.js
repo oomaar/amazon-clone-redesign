@@ -70,7 +70,7 @@ export const InfoButton = styled.button`
   outline: 0;
   font-size: 0.9rem;
   font-weight: ${({ theme }) => theme.typography.fontWeight.fontBold};
-  background-color: hsl(32, 80%, 74%);
+  background-color: ${({ theme }) => theme.colors.buttonColor};
   padding: 0.45rem 0.9rem;
   border-radius: 0.5rem;
   cursor: pointer;

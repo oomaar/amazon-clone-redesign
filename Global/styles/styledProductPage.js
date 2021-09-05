@@ -119,11 +119,11 @@ export const AddButton = styled.button`
   outline: 0;
   font-size: 0.9rem;
   font-weight: ${({ theme }) => theme.typography.fontWeight.fontBold};
-  background-color: hsl(32, 80%, 74%);
+  background-color: ${({ theme }) => theme.colors.buttonColor};
+  color: #fff;
   padding: 0.45rem 0.9rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  color: #fff;
   opacity: 0.8;
   transition: 0.5s;
   margin-right: 1rem;
@@ -141,7 +141,7 @@ export const BookMark = styled.div`
 `;
 
 export const BookIcon = styled.div`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.buttonText};
 `;
 
 export const LikeProduct = styled.div`

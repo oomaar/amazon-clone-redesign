@@ -23,7 +23,7 @@ export const ViewContainer = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(129, 129, 129, 0.3);
+  background-color: rgba(129, 129, 129, 0.4);
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;

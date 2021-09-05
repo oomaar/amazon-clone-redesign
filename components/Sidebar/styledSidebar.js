@@ -63,7 +63,7 @@ export const Icon = styled.div`
 `;
 
 export const CartCount = styled.div`
-  background-color: hsl(32, 80%, 74%);
+  background-color: ${({ theme }) => theme.colors.buttonColor};
   display: flex;
   justify-content: center;
   align-items: center;

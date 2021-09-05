@@ -51,7 +51,9 @@ export const lightTheme = {
     scrollBarColor: `hsl(${hueColor}, 12%, 90%)`,
     scrollThumbColor: `hsl(${hueColor}, 12%, 80%)`,
     greenContainerColor: `hsl(111, 19%, 71%)`,
-    greenContainerBg: `hsl(108, 16%, 92%)`
+    greenContainerBg: `hsl(108, 16%, 92%)`,
+    buttonColor: `hsl(32, 80%, 74%)`,
+    buttonText: `#fff`
   },
 };
 
@@ -72,7 +74,9 @@ export const darkTheme = {
     scrollBarColor: `hsl(${hueColor}, 12%, 48%)`,
     scrollThumbColor: `hsl(${hueColor}, 12%, 36%)`,
     greenContainerColor: `hsl(111, 19%, 50%)`,
-    greenContainerBg: `hsl(108, 16%, 21%)`
+    greenContainerBg: `hsl(108, 16%, 21%)`,
+    buttonColor: `hsl(267, 95%, 76%)`,
+    buttonText: `#000`
   },
 };
 
