@@ -46,8 +46,23 @@ export const ProductFeed = ({ products, data }) => {
         />
     ));
 
-    const filtering = products.map(({ category }) => (
-        category === activeCategory && productsComponent
+    const filtering = products.map(({
+        id,
+        price,
+        description,
+        category,
+        image
+    }) => (
+        category === activeCategory && (
+            <Product
+                key={id}
+                id={id}
+                price={price}
+                description={description}
+                category={category}
+                image={image}
+            />
+        )
     ));
 
     return (
