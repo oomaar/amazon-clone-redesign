@@ -47,7 +47,7 @@ export const Sidebar = () => {
                     </Icon>
                 </li>
                 <li>
-                    <Icon>
+                    <Icon onClick={() => router.push("/bookmark")}>
                         {router.route === '/bookmark' ? <BsBookmarksFill /> : <BsBookmarks />}
                     </Icon>
                 </li>
