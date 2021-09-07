@@ -12,6 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage'
 import darkSliceReducer from "./slices/darkSlice";
 import cartReducer from "./slices/cartSlice";
+import bookmarkReducer from "./slices/bookmarkSlice";
 
 const persistConfig = {
     key: 'root',
@@ -22,6 +23,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
     dark: darkSliceReducer,
     cart: cartReducer,
+    book: bookmarkReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
