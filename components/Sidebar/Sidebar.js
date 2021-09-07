@@ -13,7 +13,7 @@ import {
     Logo,
     Icons,
     Icon,
-    CartCount,
+    ItemsCount,
 } from "./styledSidebar";
 
 export const Sidebar = () => {
@@ -39,16 +39,19 @@ export const Sidebar = () => {
                     </Icon>
                 </li>
                 <li>
-                    <Icon className="cart__icon" onClick={() => router.push('/cart')}>
+                    <Icon className="relative__icon" onClick={() => router.push('/cart')}>
                         {router.route === '/cart' ? <HiShoppingCart /> : <HiOutlineShoppingCart />}
-                        <CartCount>
+                        <ItemsCount>
                             <p>{items.length}</p>
-                        </CartCount>
+                        </ItemsCount>
                     </Icon>
                 </li>
                 <li>
-                    <Icon onClick={() => router.push("/bookmark")}>
+                    <Icon className="relative__icon" onClick={() => router.push("/bookmark")}>
                         {router.route === '/bookmark' ? <BsBookmarksFill /> : <BsBookmarks />}
+                        <ItemsCount>
+                            <p>0</p>
+                        </ItemsCount>
                     </Icon>
                 </li>
                 <li>

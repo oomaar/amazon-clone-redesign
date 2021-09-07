@@ -40,7 +40,7 @@ export const Icons = styled.ul`
   padding: 0;
   width: 80%;
 
-  .cart__icon {
+  .relative__icon {
     position: relative;
   }
   
@@ -62,7 +62,7 @@ export const Icon = styled.div`
   }
 `;
 
-export const CartCount = styled.div`
+export const ItemsCount = styled.div`
   background-color: ${({ theme }) => theme.colors.buttonColor};
   display: flex;
   justify-content: center;
