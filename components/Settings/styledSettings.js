@@ -54,11 +54,6 @@ export const GreatingBox = styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
-    cursor: pointer;
-
-    :hover {
-      text-decoration: underline;
-    }
   }
 `;
 
