@@ -27,7 +27,7 @@ export const Nav = styled.nav`
 export const Subcontainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   padding-right: 1rem;
 
@@ -64,11 +64,6 @@ export const SearchContainer = styled.div`
   @media (min-width: ${lgScreen}px) {
     width: 50%;
   }
-`;
-
-export const Icons = styled.div`
-  display: felx;
-  column-gap: 1rem;
 `;
 
 export const Icon = styled.div`

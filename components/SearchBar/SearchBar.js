@@ -1,10 +1,8 @@
 import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
-import { useEffect } from "react";
-import { BiSun, BiMoon, BiSearch } from "react-icons/bi";
-import { HiOutlineUserCircle } from "react-icons/hi";
-import { useDispatch, useSelector } from "react-redux";
-import { selectDark, setDarkMode } from "../../Redux/slices/darkSlice";
+import { BiSearch } from "react-icons/bi";
+import { useSelector } from "react-redux";
+import { selectDark } from "../../Redux/slices/darkSlice";
 import {
     Nav,
     SearchContainer,
@@ -12,49 +10,12 @@ import {
     InputContainer,
     Input,
     Subcontainer,
-    Icons,
     Logo,
 } from "./styledSearchBar";
 
 export const SearchBar = () => {
     const router = useRouter();
     const darkValue = useSelector(selectDark);
-    const dispatch = useDispatch();
-
-    const checkTheme = () => {
-        switch (darkValue) {
-            case "light":
-                dispatch(setDarkMode("dark"));
-                return localStorage.setItem("darkValue", "dark")
-
-            case "dark":
-                dispatch(setDarkMode("light"));
-                return localStorage.setItem("darkValue", "light")
-
-            default:
-                dispatch(setDarkMode("light"));
-                return localStorage.setItem("darkValue", "light")
-        };
-    };
-
-    const handleLight = () => {
-        checkTheme();
-        dispatch(setDarkMode("light"));
-    };
-
-    const handleDark = () => {
-        checkTheme();
-        dispatch(setDarkMode("dark"));
-    };
-
-    useEffect(() => {
-        if (localStorage.getItem("darkValue")) {
-            const darkerValue = localStorage.getItem("darkValue");
-            dispatch(setDarkMode(darkerValue));
-        } else {
-            checkTheme(null);
-        };
-    });
 
     return (
         <Nav>
@@ -75,18 +36,6 @@ export const SearchBar = () => {
                         objectFit="contain"
                     />
                 </Logo>
-                <Icons>
-                    <Icon>
-                        {darkValue === 'light' ? (
-                            <BiMoon onClick={handleDark} />
-                        ) : (
-                            <BiSun onClick={handleLight} />
-                        )}
-                    </Icon>
-                    <Icon>
-                        <HiOutlineUserCircle />
-                    </Icon>
-                </Icons>
             </Subcontainer>
         </Nav>
     );
