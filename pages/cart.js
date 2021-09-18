@@ -3,10 +3,11 @@ import Link from "next/link";
 import Currency from "react-currency-formatter";
 import { useSelector } from "react-redux";
 import { BsCheckAll } from "react-icons/bs";
-import { CartProduct } from "../components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { HeadTag } from "../Global/HeadTag";
-import { selectItems } from "../Redux/slices/cartSlice";
+import { CartProduct } from "../components";
+import { getTotals, selectItems } from "../Redux/slices/cartSlice";
 import {
     Container,
     SubContainer,
@@ -26,14 +27,20 @@ import {
 
 const Cart = () => {
     const items = useSelector(selectItems);
-    // const totalPrice = useSelector(selectTotal);
-    const price = 12;
+    const dispatch = useDispatch();
+    const cart = useSelector(state => state.cart);
+    const { cartTotalQuantity } = useSelector(state => state.cart);
+    const totalPrice = cart.cartTotalAmount;
     const [hasPrime] = useState(Math.random() < 0.5);
-    // const totalDiscount = totalPrice > 100 ? (
-    //     Math.floor(totalPrice - (30 / totalPrice * 100))
-    // ) : (
-    //     Math.abs(Math.floor(totalPrice - (1 / totalPrice * 100)))
-    // );
+    const totalDiscount = totalPrice > 100 ? (
+        Math.floor(totalPrice - (30 / totalPrice * 100))
+    ) : (
+        Math.abs(Math.floor(totalPrice - (1 / totalPrice * 100)))
+    );
+
+    useEffect(() => {
+        dispatch(getTotals());
+    }, [cart, dispatch]);
 
     return (
         <Container>
@@ -84,11 +91,10 @@ const Cart = () => {
                                 </PrimeContainer>
                             )}
                             <SubTotal>
-                                Sub-Total: <Currency quantity={price} currency='EGP' />
+                                Sub-Total: <Currency quantity={totalDiscount} currency='EGP' />
                             </SubTotal>
-                            {/* <ItemsNumber>Number of Items: {items.length}</ItemsNumber> */}
-                            <ItemsNumber>Number of Items: items.length</ItemsNumber>
-                            <p>This price is exclusive of taxes. GST will be added during checkout.</p>
+                            <ItemsNumber>Number of Items: {cartTotalQuantity}</ItemsNumber>
+                            <p>This price is exclusive of taxes and includes discounts. GST will be added during checkout.</p>
                             <InfoButton>Proceed to Payment</InfoButton>
                         </ItemInfoContainer>
                     </SubInfo>

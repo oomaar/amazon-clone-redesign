@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'
 import darkSliceReducer from "./slices/darkSlice";
-import cartReducer from "./slices/cartSlice";
+import cartReducer, { getTotals } from "./slices/cartSlice";
 import bookmarkReducer from "./slices/bookmarkSlice";
 
 const persistConfig = {
@@ -37,5 +37,7 @@ export const store = configureStore({
             },
         }),
 });
+
+store.dispatch(getTotals());
 
 export let persistor = persistStore(store);
