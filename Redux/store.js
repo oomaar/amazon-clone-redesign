@@ -23,7 +23,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
     dark: darkSliceReducer,
     cart: cartReducer,
-    book: bookmarkReducer
+    // bookmark: bookmarkReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

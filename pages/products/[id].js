@@ -30,6 +30,7 @@ import {
 
 const SingleProduct = ({ product, products }) => {
     const [bookmark, setBookmark] = useState(false);
+
     const id = product.id;
     const title = product.title;
     const price = product.price;
@@ -115,7 +116,11 @@ const SingleProduct = ({ product, products }) => {
                             </AddButton>
                             <BookMark>
                                 <BookIcon onClick={() => setBookmark(state => !state)}>
-                                    {bookmark ? <BsBookmarkFill /> : <BsBookmark />}
+                                    {bookmark ? (
+                                        <BsBookmarkFill />
+                                    ) : (
+                                        <BsBookmark />
+                                    )}
                                 </BookIcon>
                             </BookMark>
                         </ButtonContainer>
