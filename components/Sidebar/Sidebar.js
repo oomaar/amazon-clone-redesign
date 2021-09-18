@@ -15,6 +15,7 @@ import {
     Icon,
     ItemsCount,
 } from "./styledSidebar";
+import { Settings } from "..";
 
 export const Sidebar = () => {
     const router = useRouter();
@@ -63,6 +64,7 @@ export const Sidebar = () => {
             <Icon onClick={() => setSettings(state => !state)}>
                 {settings ? <RiSettings4Fill /> : <RiSettings5Line />}
             </Icon>
+            {settings && <Settings />}
         </Nav>
     );
 };
