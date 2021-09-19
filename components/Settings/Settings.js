@@ -3,6 +3,7 @@ import { RiCustomerService2Fill } from "react-icons/ri";
 import { BiSun, BiMoon } from "react-icons/bi";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { signIn, signOut, useSession } from "next-auth/client";
 import { selectDark, setDarkMode } from "../../Redux/slices/darkSlice";
 import {
     Container,
@@ -16,6 +17,7 @@ import {
 export const Settings = ({ setSettings }) => {
     const dispatch = useDispatch();
     const darkValue = useSelector(selectDark);
+    const [session] = useSession();
 
     const checkTheme = () => {
         switch (darkValue) {
@@ -56,7 +58,12 @@ export const Settings = ({ setSettings }) => {
         <Container>
             <SettingsSidebar>
                 <GreatingBox>
-                    <span><ImUser /> Hello, Username</span>
+                    <span>
+                        <ImUser />
+                        <p>
+                            {session ? `Hello, ${session.user.name}` : "Hello, Sign In"}
+                        </p>
+                    </span>
                     <Icon>
                         <ImCross onClick={() => setSettings(false)} />
                     </Icon>
@@ -80,11 +87,11 @@ export const Settings = ({ setSettings }) => {
                         Dark Mode
                     </SubContainer>
                 )}
-                <SubContainer>
-                    Sign In
+                <SubContainer onClick={session ? signOut : signIn}>
+                    {session ? "Sign Out" : "Sign In"}
                 </SubContainer>
             </SettingsSidebar>
             <Background onClick={() => setSettings(false)}></Background>
-        </Container>
+        </Container >
     );
 };
